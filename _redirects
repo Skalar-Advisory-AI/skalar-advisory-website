@@ -1,0 +1,21 @@
+# --- skalar-advisory.com -> englische Version auf .de (301, SEO-kanonisch) ---
+https://www.skalar-advisory.com/* https://skalar-advisory.de/en/:splat 301!
+https://skalar-advisory.com/en/* https://skalar-advisory.de/en/:splat 301!
+https://skalar-advisory.com/* https://skalar-advisory.de/en/:splat 301!
+http://www.skalar-advisory.com/* https://skalar-advisory.de/en/:splat 301!
+http://skalar-advisory.com/* https://skalar-advisory.de/en/:splat 301!
+
+# --- Kunden-Kurzlinks auf .pro (spezifische Regeln VOR den allgemeinen) ---
+# Format: https://skalar-advisory.pro/kunde/<kuerzel> <Drive-Ordner-URL> 302!
+https://skalar-advisory.pro/kunde/demo https://drive.google.com/drive/folders/1mzJGT6dly7dCH7dhcGVBhwnmixEMOIUB 302!
+
+# --- skalar-advisory.pro -> Kundenportal ---
+https://www.skalar-advisory.pro/* https://skalar-advisory.pro/:splat 301!
+https://skalar-advisory.pro/portal/* /portal/:splat 200!
+https://skalar-advisory.pro/* /portal/:splat 200!
+
+# --- Testpfad ohne eigene Domain (netlify.app) ---
+/portal/kunde/demo https://drive.google.com/drive/folders/1mzJGT6dly7dCH7dhcGVBhwnmixEMOIUB 302
+
+# --- Portalpfad auf .de nicht anbieten ---
+https://skalar-advisory.de/portal/* https://skalar-advisory.pro/ 301!

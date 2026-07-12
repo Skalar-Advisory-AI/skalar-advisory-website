@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book an intro call, Skalar Advisory</title>
+<meta name="description" content="Book a free 60-minute intro call with Skalar Advisory, video or phone.">
+<link rel="alternate" hreflang="de" href="https://skalar-advisory.de/termin.html">
+<link rel="alternate" hreflang="en" href="https://skalar-advisory.de/en/termin.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' fill='%23101114'/%3E%3Cpath d='M 7 39 H 19 V 27 H 31 V 15 H 43' fill='none' stroke='%23C6A15B' stroke-width='3.2'/%3E%3C/svg%3E">
+<style>
+  :root { --black:#101114; --panel:#17181c; --gold:#C6A15B; --grey:#A9A9AD; --faint:#77777C; --line:#2a2b30; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--black); color:var(--grey); font-family:Helvetica, Arial, sans-serif; line-height:1.6; }
+  .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
+  header { padding:28px 0; border-bottom:1px solid var(--line); }
+  .header-row { display:flex; justify-content:space-between; align-items:center; gap:16px; }
+  .lang a { color:var(--faint); text-decoration:none; font-size:12px; letter-spacing:2px; }
+  .lang a:hover, .lang a.active { color:var(--gold); }
+  .brand { display:flex; align-items:center; gap:14px; text-decoration:none; }
+  .brand-name { color:var(--gold); font-weight:bold; letter-spacing:4px; font-size:15px; }
+  h1 { color:#fff; font-size:clamp(24px, 4vw, 34px); margin:56px 0 12px; }
+  .intro { max-width:640px; font-size:16px; }
+  .booking-frame { margin:40px 0 80px; background:var(--panel); border:1px solid var(--gold); padding:10px; }
+  .booking-frame iframe { display:block; width:100%; height:900px; border:0; background:#fff; }
+  .fallback { margin:40px 0 80px; background:var(--panel); border:1px solid var(--line); padding:36px; max-width:640px; }
+  .fallback p { font-size:15.5px; }
+  .cta { display:inline-block; margin-top:24px; padding:13px 26px; border:1px solid var(--gold); color:var(--gold); text-decoration:none; letter-spacing:2px; font-size:13px; text-transform:uppercase; }
+  .cta:hover { background:var(--gold); color:var(--black); }
+  .note { font-size:12.5px; color:var(--faint); margin-top:14px; max-width:640px; }
+  a { color:var(--gold); }
+  footer { border-top:1px solid var(--line); padding:28px 0; font-size:12.5px; color:var(--faint); }
+  footer a { color:var(--faint); text-decoration:none; }
+  @media (max-width: 640px) {
+    header { padding:16px 0; }
+    .brand svg { width:28px; height:28px; }
+    .brand-name { font-size:14px; letter-spacing:2.5px; }
+    h1 { margin:36px 0 10px; }
+    .booking-frame { margin:24px 0 44px; padding:6px; }
+    .booking-frame iframe { height:760px; }
+    .fallback { padding:24px; margin:24px 0 44px; }
+    .cta { display:block; text-align:center; padding:14px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-row">
+    <a class="brand" href="/en/">
+      <svg width="34" height="34" viewBox="0 0 48 48" aria-hidden="true"><path d="M 7 39 H 19 V 27 H 31 V 15 H 43" fill="none" stroke="#C6A15B" stroke-width="3.2" stroke-linecap="square"/></svg>
+      <span class="brand-name">SKALAR&nbsp;ADVISORY</span>
+    </a>
+    <div class="lang"><a href="/termin.html">DE</a>&nbsp;&nbsp;<a href="/en/termin.html" class="active">EN</a></div>
+  </div>
+</header>
+
+<div class="wrap">
+  <h1>Book an intro call</h1>
+  <p class="intro">60 minutes, free of charge, via video or phone. We discuss your situation and whether, and how, I can help. Simply pick a free slot:</p>
+
+  <div id="booking" class="booking-frame" hidden>
+    <iframe id="booking-iframe" title="Appointment booking via Google Calendar" loading="lazy"></iframe>
+  </div>
+  <p id="booking-alt" class="note" hidden>Calendar not showing? <a id="booking-link" href="#" rel="noopener" target="_blank">Open the booking page in a new tab</a>.</p>
+
+  <div id="fallback" class="fallback">
+    <p>The online calendar is being set up. In the meantime, reach out directly, I will get back to you within one business day with available slots:</p>
+    <a class="cta" href="mailto:marc@skalar-advisory.de?subject=Intro%20call">Send an email</a>
+    <p style="margin-top:16px;">or by phone: <a href="tel:+4915154400577">+49&nbsp;1515&nbsp;4400577</a></p>
+  </div>
+
+  <p class="note">Note: bookings are handled via Google Calendar. Loading the calendar transfers data to Google, see the <a href="/datenschutz.html">privacy policy</a> (German).</p>
+</div>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+    <span>© 2026 Skalar Advisory · Marc Schmitz</span>
+    <span><a href="/impressum.html">Imprint</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="/datenschutz.html">Privacy</a></span>
+  </div>
+</footer>
+
+<script>
+  // Google Calendar appointment schedule: paste booking link here
+  var BOOKING_URL = "https://calendar.google.com/calendar/appointments/schedules/AcZssZ2R2JfVd3hNx8-IiHSkthTTU9esq2mYRf2QObREqppv2cJpQKW_NSsVsjGA2BqEMEAG9YiSkZGl";
+  if (BOOKING_URL) {
+    document.getElementById("booking-iframe").src = BOOKING_URL + (BOOKING_URL.indexOf("?") === -1 ? "?gv=true" : "&gv=true");
+    document.getElementById("booking").hidden = false;
+    document.getElementById("fallback").hidden = true;
+    var alt = document.getElementById("booking-alt");
+    document.getElementById("booking-link").href = BOOKING_URL;
+    alt.hidden = false;
+  }
+</script>
+
+</body>
+</html>

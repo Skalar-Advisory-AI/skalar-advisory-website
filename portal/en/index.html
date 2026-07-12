@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Client Portal, Skalar Advisory</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' fill='%23101114'/%3E%3Cpath d='M 7 39 H 19 V 27 H 31 V 15 H 43' fill='none' stroke='%23C6A15B' stroke-width='3.2'/%3E%3C/svg%3E">
+<style>
+  :root { --black:#101114; --panel:#17181c; --gold:#C6A15B; --grey:#A9A9AD; --faint:#77777C; --line:#2a2b30; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--black); color:var(--grey); font-family:Helvetica, Arial, sans-serif; line-height:1.6; }
+  .wrap { max-width:760px; margin:0 auto; padding:0 24px; }
+  header { padding:28px 0; border-bottom:1px solid var(--line); }
+  .header-row { display:flex; justify-content:space-between; align-items:center; gap:16px; }
+  .lang a { color:var(--faint); text-decoration:none; font-size:12px; letter-spacing:2px; }
+  .lang a:hover, .lang a.active { color:var(--gold); }
+  .brand { display:flex; align-items:center; gap:14px; text-decoration:none; }
+  .brand-name { color:var(--gold); font-weight:bold; letter-spacing:4px; font-size:15px; }
+  .brand-sub { color:var(--faint); letter-spacing:3px; font-size:10px; }
+  h1 { color:#fff; font-size:clamp(24px, 4vw, 34px); margin:56px 0 28px; }
+  .card { background:var(--panel); border:1px solid var(--line); padding:32px; margin:20px 0; }
+  .card h2 { color:var(--gold); font-size:13px; letter-spacing:3px; text-transform:uppercase; margin-bottom:14px; }
+  .card p { font-size:15px; }
+  .card p + p { margin-top:10px; }
+  code { background:#0a0b0d; border:1px solid var(--line); padding:2px 8px; color:var(--gold); font-size:14px; }
+  a { color:var(--gold); text-decoration:none; }
+  .cta { display:inline-block; margin-top:18px; padding:12px 24px; border:1px solid var(--gold); color:var(--gold); letter-spacing:2px; font-size:12.5px; text-transform:uppercase; }
+  .cta:hover { background:var(--gold); color:var(--black); }
+  footer { border-top:1px solid var(--line); margin-top:64px; padding:28px 0; font-size:12.5px; color:var(--faint); }
+  footer a { color:var(--faint); }
+  @media (max-width: 640px) {
+    header { padding:16px 0; }
+    .brand svg { width:32px; height:32px; }
+    .brand-name { font-size:14px; letter-spacing:2.5px; }
+    .brand-sub { font-size:9px; letter-spacing:2px; }
+    h1 { margin:36px 0 20px; }
+    .card { padding:22px; margin:14px 0; }
+    .cta { display:block; text-align:center; padding:14px 0; }
+    footer { margin-top:44px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-row">
+    <a class="brand" href="https://skalar-advisory.de/en/">
+      <svg width="40" height="40" viewBox="0 0 48 48" aria-hidden="true"><path d="M 7 39 H 19 V 27 H 31 V 15 H 43" fill="none" stroke="#C6A15B" stroke-width="3.2" stroke-linecap="square"/></svg>
+      <div>
+        <div class="brand-name">SKALAR&nbsp;ADVISORY</div>
+        <div class="brand-sub">CLIENT&nbsp;PORTAL</div>
+      </div>
+    </a>
+    <div class="lang"><a href="/">DE</a>&nbsp;&nbsp;<a href="/en/" class="active">EN</a></div>
+  </div>
+</header>
+
+<div class="wrap">
+  <h1>Client Portal</h1>
+
+  <div class="card">
+    <h2>Your access</h2>
+    <p>Each client receives a personal portal link in the format <code>skalar-advisory.pro/kunde/yourname</code>. It takes you to your protected area containing contracts, invoices, working documents and meeting notes.</p>
+    <p>Access is limited to the email addresses agreed with you. On first use, simply sign in with that address (Google account or verification code).</p>
+  </div>
+
+  <div class="card">
+    <h2>No access yet?</h2>
+    <p>If you are a client and don&rsquo;t have your portal link at hand, a short message is all it takes:</p>
+    <a class="cta" href="mailto:marc@skalar-advisory.de?subject=Portal%20access">Request access</a>
+  </div>
+
+  <div class="card">
+    <h2>Confidentiality</h2>
+    <p>Documents are transferred encrypted and stored in an access-restricted area (Google Drive, Google Workspace). Please do not send confidential documents via unencrypted email, use your portal folder instead.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+    <span>© 2026 Skalar Advisory · Marc Schmitz</span>
+    <span><a href="https://skalar-advisory.de/impressum.html">Imprint</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://skalar-advisory.de/datenschutz.html">Privacy (German)</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

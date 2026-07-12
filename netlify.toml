@@ -1,0 +1,6 @@
+# Netlify-Konfiguration Skalar Advisory
+# Statische Site ohne Build-Schritt. Redirects stehen in _redirects.
+
+[build]
+  publish = "."
+  command = ""
