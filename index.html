@@ -33,7 +33,7 @@
     section { padding:36px 0; }
     h2 { margin-bottom:20px; }
     .card { padding:22px; }
-    .stats { gap:14px; }
+    .stats { grid-template-columns:1fr; gap:14px; }
   }
   .hero { padding-top:88px; padding-bottom:64px; }
   h1 { color:#fff; font-size:clamp(28px, 5vw, 46px); line-height:1.15; letter-spacing:0.5px; max-width:720px; }
@@ -47,7 +47,7 @@
   .card { background:var(--panel); padding:28px; border:1px solid var(--line); }
   .card h3 { color:#fff; font-size:17px; margin-bottom:12px; }
   .card p { font-size:14.5px; }
-  .stats { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:20px; text-align:center; }
+  .stats { display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; text-align:center; }
   .stat b { display:block; color:var(--gold); font-size:clamp(30px, 4vw, 44px); font-weight:bold; }
   .stat span { font-size:13px; color:var(--faint); }
   .stat-wide { grid-column:1 / -1; margin-top:4px; }
