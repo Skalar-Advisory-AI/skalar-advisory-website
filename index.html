@@ -34,6 +34,8 @@
     h2 { margin-bottom:20px; }
     .card { padding:22px; }
     .stats { grid-template-columns:1fr; gap:14px; }
+    .cv-item { flex-direction:column; gap:3px; padding:11px 0; }
+    .cv-date { flex:none; }
   }
   .hero { padding-top:88px; padding-bottom:64px; }
   h1 { color:#fff; font-size:clamp(28px, 5vw, 46px); line-height:1.15; letter-spacing:0.5px; max-width:720px; }
@@ -53,6 +55,13 @@
   .stat-wide { grid-column:1 / -1; margin-top:4px; }
   .about p { max-width:720px; font-size:16px; }
   .about p + p { margin-top:16px; }
+  .cv { max-width:720px; margin-top:36px; }
+  .cv-label { color:var(--gold); font-size:12px; letter-spacing:3px; text-transform:uppercase; margin-bottom:6px; }
+  .cv-item { display:flex; gap:18px; padding:13px 0; border-top:1px solid var(--line); font-size:14.5px; }
+  .cv-item:last-child { border-bottom:1px solid var(--line); }
+  .cv-date { flex:0 0 96px; color:var(--gold); font-weight:bold; font-size:13px; padding-top:1px; }
+  .cv-role { color:#fff; font-weight:bold; }
+  .cv-desc { color:var(--grey); font-size:13.5px; }
   .contact a { color:var(--gold); text-decoration:none; }
   .contact p { font-size:16px; margin-top:8px; }
   footer { border-top:1px solid var(--line); padding:28px 0; font-size:12.5px; color:var(--faint); display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; }
@@ -118,6 +127,14 @@
     <h2>Über Skalar Advisory</h2>
     <p>Skalar Advisory ist die Beratung von Marc Schmitz, Operator, nicht Theoretiker. 20 Jahre Medienindustrie, davon der größte Teil in Führungsverantwortung für Aufbau, Internationalisierung und digitale Transformation von Publishing-Geschäften.</p>
     <p>Der Name ist Programm: <em style="color:#fff;">Skalar</em>, vom lateinischen <em>scala</em>, die Treppe. Geschäfte Stufe für Stufe auf das nächste Niveau bringen, mit klarem Wert und ohne Beiwerk.</p>
+    <div class="cv">
+      <div class="cv-label">Stationen</div>
+      <div class="cv-item"><div class="cv-date">seit 2026</div><div><span class="cv-role">Chief Operating Officer, Ströer SE &amp; Co. KGaA</span><div class="cv-desc">Transformation des Gesamtkonzerns zur One AI-driven Company</div></div></div>
+      <div class="cv-item"><div class="cv-date">seit 2016</div><div><span class="cv-role">Group CEO, Ströer Publishing / t-online</span><div class="cv-desc">Turnaround zu Deutschlands führendem Nachrichtenportal, EBITDA von 27 auf über 55 Mio. € mehr als verdoppelt, 670 Mitarbeitende</div></div></div>
+      <div class="cv-item"><div class="cv-date">2010–2016</div><div><span class="cv-role">Vorstand / Managing Director International, aufeminin.com S.A., Paris</span><div class="cv-desc">15 Ländergesellschaften aufgebaut, internationaler Umsatzanteil von unter 10 auf über 80 %</div></div></div>
+      <div class="cv-item"><div class="cv-date">2008–2016</div><div><span class="cv-role">Managing Director, gofeminin.de GmbH, Köln</span><div class="cv-desc">Führung der deutschen Marktführer gofeminin.de und Onmeda</div></div></div>
+      <div class="cv-item"><div class="cv-date">2001–2008</div><div><span class="cv-role">Frühere Stationen</span><div class="cv-desc">Director Health Markets (OnVista Media), Management- und IT-Beratung; Diplom-Kaufmann, RWTH Aachen</div></div></div>
+    </div>
   </div>
 </section>
 
