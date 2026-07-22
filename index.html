@@ -22,21 +22,6 @@
   .brand-name { color:var(--gold); font-weight:bold; letter-spacing:4px; font-size:15px; }
   .brand-sub { color:var(--faint); letter-spacing:3px; font-size:10px; max-width:100%; }
   .brand > div { min-width:0; }
-  @media (max-width: 640px) {
-    header { padding:16px 0; }
-    .brand svg { width:32px; height:32px; }
-    .brand-name { font-size:14px; letter-spacing:2.5px; }
-    .brand-sub { font-size:9px; letter-spacing:1.6px; line-height:1.6; }
-    .hero { padding-top:40px; padding-bottom:32px; }
-    .hero p.fields { font-size:11px; letter-spacing:1.2px; line-height:1.9; margin-top:16px; }
-    .cta { display:block; text-align:center; margin-top:24px; padding:15px 0; }
-    section { padding:36px 0; }
-    h2 { margin-bottom:20px; }
-    .card { padding:22px; }
-    .stats { grid-template-columns:1fr; gap:14px; }
-    .cv-item { flex-direction:column; gap:3px; padding:11px 0; }
-    .cv-date { flex:none; }
-  }
   .hero { padding-top:88px; padding-bottom:64px; }
   h1 { color:#fff; font-size:clamp(28px, 5vw, 46px); line-height:1.15; letter-spacing:0.5px; max-width:720px; }
   h1 em { color:var(--gold); font-style:normal; }
@@ -67,6 +52,21 @@
   footer { border-top:1px solid var(--line); padding:28px 0; font-size:12.5px; color:var(--faint); display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; }
   footer a { color:var(--faint); text-decoration:none; }
   footer a:hover { color:var(--gold); }
+  @media (max-width: 640px) {
+    header { padding:16px 0; }
+    .brand svg { width:32px; height:32px; }
+    .brand-name { font-size:14px; letter-spacing:2.5px; }
+    .brand-sub { font-size:9px; letter-spacing:1.6px; line-height:1.6; }
+    .hero { padding-top:40px; padding-bottom:32px; }
+    .hero p.fields { font-size:11px; letter-spacing:1.2px; line-height:1.9; margin-top:16px; }
+    .cta { display:block; text-align:center; margin-top:24px; padding:15px 0; }
+    section { padding:36px 0; }
+    h2 { margin-bottom:20px; }
+    .card { padding:22px; }
+    .stats { grid-template-columns:1fr; gap:14px; }
+    .cv-item { flex-direction:column; gap:3px; padding:11px 0; }
+    .cv-date { flex:none; }
+  }
 </style>
 </head>
 <body>
