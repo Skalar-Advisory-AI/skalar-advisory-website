@@ -52,6 +52,49 @@
   footer { border-top:1px solid var(--line); padding:28px 0; font-size:12.5px; color:var(--faint); display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; }
   footer a { color:var(--faint); text-decoration:none; }
   footer a:hover { color:var(--gold); }
+
+  /* ===== Leistungen: vier gleichwertige Bloecke ===== */
+  .lgrid { display:grid; grid-template-columns:repeat(4, 1fr); gap:18px; }
+  .lcard { background:var(--panel); border:1px solid var(--line); padding:26px 22px; display:flex; flex-direction:column; }
+  .lcard .ic { width:34px; height:30px; margin-bottom:20px; flex:none; }
+  .lcard h3 { color:#EDEDEA; font-size:17px; font-weight:bold; letter-spacing:.3px; margin-bottom:12px; line-height:1.3; }
+  .lcard p { font-size:13px; line-height:1.6; color:var(--grey); }
+  .lcard .int { margin-top:14px; padding-top:14px; border-top:1px solid var(--line); font-size:12px; line-height:1.55; color:var(--faint); }
+  .lcard .int::before { content:"KI-Integration"; display:block; font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold); margin-bottom:6px; }
+  .lcard .tag { margin-top:auto; padding-top:18px; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--faint); }
+  .lcard.ai { border-color:rgba(198,161,91,.34); }
+  .lcard.ai h3 .k { color:var(--gold); }
+  .lcard.ai .tag { color:var(--gold); }
+  .newflag { align-self:flex-start; font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold); border:1px solid rgba(198,161,91,.4); background:rgba(198,161,91,.08); padding:3px 8px; border-radius:20px; margin-bottom:16px; }
+
+  /* ===== skalar AI als Projekt-Highlight ===== */
+  .ai-sec { background:linear-gradient(180deg, #0E0F12, #121317); }
+  .ai-top { display:flex; align-items:flex-end; justify-content:space-between; gap:30px; flex-wrap:wrap; }
+  .subbrand { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--faint); margin-bottom:8px; }
+  .brandrow { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+  .brandrow .stair { width:26px; height:21px; flex:none; }
+  .brandrow .wm { font-size:15px; font-weight:bold; letter-spacing:3px; color:var(--gold); }
+  .brandrow .wm span { color:var(--faint); }
+  .ai-head { color:#fff; font-size:clamp(24px, 3.4vw, 30px); font-weight:bold; letter-spacing:.3px; line-height:1.2; }
+  .ai-lede { font-size:15px; line-height:1.6; color:var(--grey); max-width:440px; }
+  .shot-embed { margin:40px 0 8px; border:1px solid var(--line); border-radius:14px; overflow:hidden; box-shadow:0 30px 80px rgba(0,0,0,.5); }
+  .shot-embed img { display:block; width:100%; height:auto; }
+  .caption { font-size:11px; letter-spacing:1px; color:var(--faint); text-align:center; margin-top:14px; }
+  .ngrid { display:grid; grid-template-columns:repeat(3, 1fr); gap:18px; margin-top:46px; }
+  .ncard { background:var(--panel); border:1px solid var(--line); padding:28px 24px; }
+  .ncard .ic { width:30px; height:30px; margin-bottom:18px; flex:none; }
+  .ncard h4 { color:#EDEDEA; font-size:16px; font-weight:bold; margin-bottom:10px; letter-spacing:.3px; }
+  .ncard p { font-size:12.5px; line-height:1.6; color:var(--grey); }
+  .ai-cta { margin-top:52px; text-align:center; }
+  .ai-cta .line { font-size:19px; color:#EDEDEA; font-weight:normal; margin-bottom:22px; letter-spacing:.2px; }
+  .ai-cta .btn { display:inline-block; font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold); border:1px solid var(--gold); border-radius:4px; padding:15px 34px; text-decoration:none; }
+  .ai-cta .btn:hover { background:var(--gold); color:var(--black); }
+  .ai-cta .fine { margin-top:16px; font-size:11px; color:var(--faint); letter-spacing:.5px; }
+
+  @media (max-width: 900px) {
+    .lgrid { grid-template-columns:repeat(2, 1fr); }
+    .ngrid { grid-template-columns:1fr; }
+  }
   @media (max-width: 640px) {
     header { padding:16px 0; }
     .brand svg { width:32px; height:32px; }
@@ -63,6 +106,8 @@
     section { padding:36px 0; }
     h2 { margin-bottom:20px; }
     .card { padding:22px; }
+    .lgrid { grid-template-columns:1fr; }
+    .ai-top { gap:8px; }
     .stats { grid-template-columns:1fr; gap:14px; }
     .cv-item { flex-direction:column; gap:3px; padding:11px 0; }
     .cv-date { flex:none; }
@@ -93,19 +138,83 @@
 <section id="leistungen">
   <div class="wrap">
     <h2>Leistungen</h2>
-    <div class="grid">
-      <div class="card">
+    <div class="lgrid">
+      <div class="lcard">
+        <svg class="ic" viewBox="0 0 34 30" fill="none" stroke="#C6A15B" stroke-width="1.6" aria-hidden="true"><path d="M4 26 L14 14 L20 20 L30 6"/><path d="M23 6 H30 V13"/></svg>
         <h3>Strategie &amp; Transformation</h3>
-        <p>Digital- und Erlösstrategie (Paid, Advertising, Commerce), AI-Transformation in Newsroom, Marketing und Publishing, internationale Expansion, Due Diligence für Investoren.</p>
+        <p>Digital- und Erlösstrategie (Paid, Advertising, Commerce), KI-Transformation in Newsroom, Marketing und Publishing, internationale Expansion, Due Diligence für Investoren.</p>
+        <p class="int">Von der Digital- und Erlösstrategie bis zum betriebenen Agentic-AI-System (skalar AI), von der Idee bis zum laufenden Betrieb.</p>
+        <div class="tag">Bestehend</div>
       </div>
-      <div class="card">
+
+      <div class="lcard">
+        <svg class="ic" viewBox="0 0 34 30" fill="none" stroke="#C6A15B" stroke-width="1.6" aria-hidden="true"><circle cx="17" cy="9" r="5"/><path d="M6 26 c0-7 5-11 11-11 s11 4 11 11"/></svg>
         <h3>Interim Management</h3>
         <p>CDO oder Geschäftsführer Digital auf Zeit, für Aufbau, Skalierung oder Restrukturierung. 3 bis 12 Monate, operativ verantwortlich, mit Ergebnisdruck.</p>
+        <p class="int">Operativ verantwortlich, inklusive Aufbau KI-gestützter Betriebsprozesse.</p>
+        <div class="tag">Bestehend</div>
       </div>
-      <div class="card">
+
+      <div class="lcard">
+        <svg class="ic" viewBox="0 0 34 30" fill="none" stroke="#C6A15B" stroke-width="1.6" aria-hidden="true"><path d="M17 3 L29 9 V17 c0 7-6 10-12 12 c-6-2-12-5-12-12 V9 Z"/><path d="M12 15 l4 4 l7-8"/></svg>
         <h3>Beirat &amp; Advisory</h3>
-        <p>Laufendes Sparring für CEOs, Gesellschafter und Investoren, als Advisory-Retainer oder formelles Beirats-/Aufsichtsratsmandat.</p>
+        <p>Laufendes Sparring für CEOs, Gesellschafter und Investoren, als Advisory-Retainer oder formelles Beirats- und Aufsichtsratsmandat.</p>
+        <p class="int">Auch zu KI-Einführung und Agentic-AI, aus eigener Umsetzung statt aus der Theorie.</p>
+        <div class="tag">Bestehend</div>
       </div>
+
+      <div class="lcard ai">
+        <span class="newflag">Neu</span>
+        <svg class="ic" viewBox="0 0 34 30" fill="none" stroke="#C6A15B" stroke-width="1.6" aria-hidden="true"><rect x="4" y="20" width="6" height="7"/><rect x="14" y="13" width="6" height="14"/><rect x="24" y="5" width="6" height="22"/><circle cx="7" cy="15" r="1.6" fill="#C6A15B" stroke="none"/><circle cx="17" cy="8" r="1.6" fill="#C6A15B" stroke="none"/><circle cx="27" cy="3" r="1.2" fill="#C6A15B" stroke="none"/></svg>
+        <h3>KI, die <span class="k">läuft</span>, nicht nur berät</h3>
+        <p>Die meisten reden über KI. Skalar Advisory betreibt sie. skalar AI ist ein Agentic-AI-System: ein Orchestrator koordiniert spezialisierte Agenten, die reale Betriebsaufgaben übernehmen. Kein Tool, kein Konzeptpapier, sondern ein betriebenes Team.</p>
+        <div class="tag">Betrieben unter skalar AI</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skalar-ai" class="ai-sec">
+  <div class="wrap">
+    <div class="ai-top">
+      <div>
+        <div class="subbrand">Projekt aus dem Haus Skalar Advisory</div>
+        <div class="brandrow">
+          <svg class="stair" viewBox="0 0 26 21" aria-hidden="true"><g fill="#C6A15B"><rect x="0" y="15" width="7" height="6"/><rect x="9" y="8" width="7" height="13"/><rect x="18" y="1" width="7" height="20"/></g></svg>
+          <div class="wm">SKALAR <span>AI</span></div>
+        </div>
+        <div class="ai-head">Ein betriebenes System, kein Konzept.</div>
+      </div>
+      <p class="ai-lede">Der Beleg ist das System selbst. Marc Schmitz betreibt es am eigenen Setup und zeigt es vor, statt es zu behaupten.</p>
+    </div>
+
+    <div class="shot-embed">
+      <img src="/assets/skalar-ai-dashboard.png" alt="Anonymisiertes skalar AI Dashboard" width="2560" height="1352">
+    </div>
+    <div class="caption">Live-Ansicht des betriebenen Systems &middot; anonymisiert, ohne echte Namen, Daten oder Beträge</div>
+
+    <div class="ngrid">
+      <div class="ncard">
+        <svg class="ic" viewBox="0 0 30 30" fill="none" stroke="#C6A15B" stroke-width="1.6" aria-hidden="true"><rect x="3" y="18" width="5" height="9"/><rect x="12" y="11" width="5" height="16"/><rect x="21" y="4" width="5" height="23"/></svg>
+        <h4>Skalieren ohne Kopfzahl</h4>
+        <p>Ein Mensch plus ein Agententeam leistet, wofür sonst eine Abteilung nötig wäre. Wachstum ohne proportional wachsende Kosten.</p>
+      </div>
+      <div class="ncard">
+        <svg class="ic" viewBox="0 0 30 30" fill="none" stroke="#C6A15B" stroke-width="1.6" aria-hidden="true"><path d="M6 15 l6 6 l12 -13"/></svg>
+        <h4>Umsetzung statt PowerPoint</h4>
+        <p>Ein real betriebenes System als Referenz, kein Strategiepapier. Sie sehen, was läuft, bevor Sie darüber entscheiden.</p>
+      </div>
+      <div class="ncard">
+        <svg class="ic" viewBox="0 0 30 30" fill="none" stroke="#C6A15B" stroke-width="1.6" aria-hidden="true"><path d="M15 3 L25 8 V15 c0 6-5 9-10 12 c-5-3-10-6-10-12 V8 Z"/></svg>
+        <h4>Kontrolliert und sicher</h4>
+        <p>Kritische Aktionen laufen nie autonom, sondern nur mit Ihrer Freigabe. Kosten gedeckelt, private und geschäftliche Daten getrennt.</p>
+      </div>
+    </div>
+
+    <div class="ai-cta">
+      <div class="line">Interesse an skalar AI? Sprechen wir.</div>
+      <a class="btn" href="/termin.html">Gespräch anfragen</a>
+      <div class="fine">Kein Verkaufstermin. Ein Gespräch über Ihren Betrieb und was sich automatisieren lässt.</div>
     </div>
   </div>
 </section>
@@ -130,7 +239,7 @@
     <div class="cv">
       <div class="cv-label">Stationen</div>
       <div class="cv-item"><div class="cv-date">seit 2026</div><div><span class="cv-role">Chief Operating Officer, Ströer SE &amp; Co. KGaA</span><div class="cv-desc">Transformation des Gesamtkonzerns zur One AI-driven Company</div></div></div>
-      <div class="cv-item"><div class="cv-date">seit 2016</div><div><span class="cv-role">Group CEO, Ströer Publishing / t-online</span><div class="cv-desc">Turnaround zu Deutschlands führendem Nachrichtenportal, EBITDA von 27 auf über 55 Mio. € mehr als verdoppelt, 670 Mitarbeitende</div></div></div>
+      <div class="cv-item"><div class="cv-date">seit 2016</div><div><span class="cv-role">Group CEO, Ströer Publishing / t-online</span><div class="cv-desc">Turnaround zu Deutschlands führendem Nachrichtenportal, EBITDA im Rahmen der Transformation signifikant gesteigert, 670 Mitarbeitende</div></div></div>
       <div class="cv-item"><div class="cv-date">2010–2016</div><div><span class="cv-role">Vorstand / Managing Director International, aufeminin.com S.A., Paris</span><div class="cv-desc">15 Ländergesellschaften aufgebaut, internationaler Umsatzanteil von unter 10 auf über 80 %</div></div></div>
       <div class="cv-item"><div class="cv-date">2008–2016</div><div><span class="cv-role">Managing Director, gofeminin.de GmbH, Köln</span><div class="cv-desc">Führung der deutschen Marktführer gofeminin.de und Onmeda</div></div></div>
       <div class="cv-item"><div class="cv-date">2001–2008</div><div><span class="cv-role">Frühere Stationen</span><div class="cv-desc">Director Health Markets (OnVista Media), Management- und IT-Beratung; Diplom-Kaufmann, RWTH Aachen</div></div></div>
