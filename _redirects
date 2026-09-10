@@ -1,3 +1,12 @@
+# --- skalar AI Lead-Intake: Proxy auf den VPS-Tunnel (Scottys Backend-Service) ---
+# Das Kontaktformular (kontakt-ki.html) postet an /lead-intake. Der Endpoint
+# laeuft NICHT auf Netlify, sondern als Flask-Service hinter dem Cloudflare-Tunnel.
+# 200!-Proxy (kein Redirect) haelt es aus Browsersicht same-origin -> CORS sauber,
+# der Origin bleibt skalar-advisory.de (vom Backend erlaubt). Muss VOR allen
+# allgemeinen Regeln stehen.
+/lead-intake https://jarvis.skalar-advisory.com/lead-intake 200!
+/lead-intake/* https://jarvis.skalar-advisory.com/lead-intake/:splat 200!
+
 # --- skalar-advisory.com -> englische Version auf .de (301, SEO-kanonisch) ---
 https://www.skalar-advisory.com/* https://skalar-advisory.de/en/:splat 301!
 https://skalar-advisory.com/en/* https://skalar-advisory.de/en/:splat 301!
