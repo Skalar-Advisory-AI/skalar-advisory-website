@@ -30,7 +30,7 @@
   .cta:hover { background:var(--gold); color:var(--black); }
   section { padding:64px 0; border-top:1px solid var(--line); }
   h2 { color:var(--gold); font-size:13px; letter-spacing:4px; text-transform:uppercase; margin-bottom:32px; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:20px; }
+  .lgrid { display:grid; grid-template-columns:repeat(4, 1fr); gap:18px; }
   .lcard { background:var(--panel); border:1px solid var(--line); padding:26px 22px; display:flex; flex-direction:column; }
   .lcard .ic { width:34px; height:30px; margin-bottom:20px; flex:none; }
   .lcard h3 { color:#EDEDEA; font-size:17px; font-weight:bold; letter-spacing:.3px; margin-bottom:12px; line-height:1.3; }
@@ -85,6 +85,7 @@
   .ai-cta .fine { margin-top:16px; font-size:11px; color:var(--faint); letter-spacing:.5px; }
 
   @media (max-width: 900px) {
+    .lgrid { grid-template-columns:repeat(2, 1fr); }
     .ngrid { grid-template-columns:1fr; }
   }
   @media (max-width: 640px) {
@@ -98,6 +99,7 @@
     section { padding:36px 0; }
     h2 { margin-bottom:20px; }
     .lcard { padding:22px; }
+    .lgrid { grid-template-columns:1fr; }
     .stats { grid-template-columns:1fr; gap:14px; }
     .cv-item { flex-direction:column; gap:3px; padding:11px 0; }
     .cv-date { flex:none; }
@@ -128,7 +130,7 @@
 <section id="services">
   <div class="wrap">
     <h2>Services</h2>
-    <div class="grid">
+    <div class="lgrid">
       <div class="lcard">
         <h3>Strategy &amp; Transformation</h3>
         <p>Digital and revenue strategy (paid, advertising, commerce), AI transformation across newsroom, marketing and publishing, international expansion, due diligence for investors.</p>
