@@ -34,6 +34,8 @@
   .card { background:var(--panel); padding:28px; border:1px solid var(--line); }
   .card h3 { color:#fff; font-size:17px; margin-bottom:12px; }
   .card p { font-size:14.5px; }
+  .card .int { margin-top:14px; padding-top:14px; border-top:1px solid var(--line); font-size:12px; line-height:1.55; color:var(--faint); }
+  .card .int::before { content:"AI Integration"; display:block; font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold); margin-bottom:6px; }
   .stats { display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; text-align:center; }
   .stat b { display:block; color:var(--gold); font-size:clamp(30px, 4vw, 44px); font-weight:bold; }
   .stat span { font-size:13px; color:var(--faint); }
@@ -52,6 +54,34 @@
   footer { border-top:1px solid var(--line); padding:28px 0; font-size:12.5px; color:var(--faint); }
   footer a { color:var(--faint); text-decoration:none; }
   footer a:hover { color:var(--gold); }
+
+  /* ===== skalar AI as project highlight ===== */
+  .ai-sec { background:linear-gradient(180deg, #0E0F12, #121317); }
+  .ai-top { display:flex; align-items:flex-end; justify-content:space-between; gap:30px; flex-wrap:wrap; }
+  .subbrand { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--faint); margin-bottom:8px; }
+  .brandrow { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+  .brandrow .stair { width:26px; height:21px; flex:none; }
+  .brandrow .wm { font-size:15px; font-weight:bold; letter-spacing:3px; color:var(--gold); }
+  .brandrow .wm span { color:var(--faint); }
+  .ai-head { color:#fff; font-size:clamp(24px, 3.4vw, 30px); font-weight:bold; letter-spacing:.3px; line-height:1.2; }
+  .ai-lede { font-size:15px; line-height:1.6; color:var(--grey); max-width:440px; }
+  .shot-embed { margin:40px 0 8px; border:1px solid var(--line); border-radius:14px; overflow:hidden; box-shadow:0 30px 80px rgba(0,0,0,.5); }
+  .shot-embed img { display:block; width:100%; height:auto; }
+  .caption { font-size:11px; letter-spacing:1px; color:var(--faint); text-align:center; margin-top:14px; }
+  .ngrid { display:grid; grid-template-columns:repeat(3, 1fr); gap:18px; margin-top:46px; }
+  .ncard { background:var(--panel); border:1px solid var(--line); padding:28px 24px; }
+  .ncard .ic { width:30px; height:30px; margin-bottom:18px; flex:none; }
+  .ncard h4 { color:#EDEDEA; font-size:16px; font-weight:bold; margin-bottom:10px; letter-spacing:.3px; }
+  .ncard p { font-size:12.5px; line-height:1.6; color:var(--grey); }
+  .ai-cta { margin-top:52px; text-align:center; }
+  .ai-cta .line { font-size:19px; color:#EDEDEA; font-weight:normal; margin-bottom:22px; letter-spacing:.2px; }
+  .ai-cta .btn { display:inline-block; font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold); border:1px solid var(--gold); border-radius:4px; padding:15px 34px; text-decoration:none; }
+  .ai-cta .btn:hover { background:var(--gold); color:var(--black); }
+  .ai-cta .fine { margin-top:16px; font-size:11px; color:var(--faint); letter-spacing:.5px; }
+
+  @media (max-width: 900px) {
+    .ngrid { grid-template-columns:1fr; }
+  }
   @media (max-width: 640px) {
     header { padding:16px 0; }
     .brand svg { width:32px; height:32px; }
@@ -97,20 +127,68 @@
       <div class="card">
         <h3>Strategy &amp; Transformation</h3>
         <p>Digital and revenue strategy (paid, advertising, commerce), AI transformation across newsroom, marketing and publishing, international expansion, due diligence for investors.</p>
+        <p class="int">From digital and revenue strategy to an operated agentic AI system (skalar AI), from the idea to running operations.</p>
       </div>
       <div class="card">
         <h3>Interim Management</h3>
         <p>CDO or Managing Director Digital on demand, for build-up, scaling or restructuring. 3 to 12 months, operationally accountable, with real delivery pressure.</p>
+        <p class="int">Operationally accountable, including building AI-supported operating processes.</p>
       </div>
       <div class="card">
         <h3>Board &amp; Advisory</h3>
         <p>Ongoing sparring for CEOs, owners and investors, as an advisory retainer or a formal supervisory or advisory board mandate.</p>
+        <p class="int">Including AI adoption and agentic AI, from hands-on delivery rather than theory.</p>
       </div>
       <div class="card">
         <h3>AI that runs, not just advises</h3>
         <p>Most people talk about AI. Skalar Advisory runs it. skalar AI is an agentic AI system: an orchestrator coordinates specialised agents that take on real operational work. Not a tool, not a concept paper, but an operated team.</p>
         <p style="margin-top:12px; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold);">Operated as skalar AI</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="skalar-ai" class="ai-sec">
+  <div class="wrap">
+    <div class="ai-top">
+      <div>
+        <div class="subbrand">A project from Skalar Advisory</div>
+        <div class="brandrow">
+          <svg class="stair" viewBox="0 0 26 21" aria-hidden="true"><g fill="#C6A15B"><rect x="0" y="15" width="7" height="6"/><rect x="9" y="8" width="7" height="13"/><rect x="18" y="1" width="7" height="20"/></g></svg>
+          <div class="wm">SKALAR <span>AI</span></div>
+        </div>
+        <div class="ai-head">An operated system, not a concept.</div>
+      </div>
+      <p class="ai-lede">The proof is the system itself. Marc Schmitz runs it on his own setup and shows it, rather than claiming it.</p>
+    </div>
+
+    <div class="shot-embed">
+      <img src="/assets/skalar-ai-dashboard.png" alt="Anonymised skalar AI dashboard" width="2560" height="1352">
+    </div>
+    <div class="caption">Live view of the operated system &middot; anonymised, with no real names, data or figures</div>
+
+    <div class="ngrid">
+      <div class="ncard">
+        <svg class="ic" viewBox="0 0 30 30" fill="none" stroke="#C6A15B" stroke-width="1.6" aria-hidden="true"><rect x="3" y="18" width="5" height="9"/><rect x="12" y="11" width="5" height="16"/><rect x="21" y="4" width="5" height="23"/></svg>
+        <h4>Scale without headcount</h4>
+        <p>One person plus an agent team delivers what would otherwise take a department. Growth without costs that grow in proportion.</p>
+      </div>
+      <div class="ncard">
+        <svg class="ic" viewBox="0 0 30 30" fill="none" stroke="#C6A15B" stroke-width="1.6" aria-hidden="true"><path d="M6 15 l6 6 l12 -13"/></svg>
+        <h4>Delivery, not PowerPoint</h4>
+        <p>A genuinely operated system as the reference, not a strategy paper. You see what runs before you decide on it.</p>
+      </div>
+      <div class="ncard">
+        <svg class="ic" viewBox="0 0 30 30" fill="none" stroke="#C6A15B" stroke-width="1.6" aria-hidden="true"><path d="M15 3 L25 8 V15 c0 6-5 9-10 12 c-5-3-10-6-10-12 V8 Z"/></svg>
+        <h4>Controlled and secure</h4>
+        <p>Critical actions never run autonomously, only with your approval. Costs capped, private and business data kept separate.</p>
+      </div>
+    </div>
+
+    <div class="ai-cta">
+      <div class="line">Interested in skalar AI? Let us talk.</div>
+      <a class="btn" href="/en/termin.html">Request a conversation</a>
+      <div class="fine">Not a sales pitch. A conversation about your operations and what can be automated.</div>
     </div>
   </div>
 </section>
