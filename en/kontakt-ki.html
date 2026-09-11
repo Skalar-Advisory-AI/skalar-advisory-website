@@ -77,6 +77,12 @@
   .privacy-foot { margin-top:16px; font-size:11px; line-height:1.5; color:var(--faint); text-align:center; }
   .privacy-foot .lockrow { display:inline-flex; align-items:center; gap:6px; }
 
+  /* alternative CTA: direct calendar booking, distinct outline card */
+  .altcta { margin-top:22px; padding:18px 20px; background:rgba(198,161,91,.06); border:1px solid rgba(198,161,91,.35); border-radius:10px; text-align:center; }
+  .altcta-txt { display:block; font-size:12.5px; color:var(--grey); margin-bottom:12px; }
+  .altcta-btn { display:inline-block; font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold); border:1px solid var(--gold); border-radius:6px; padding:11px 22px; text-decoration:none; font-weight:700; }
+  .altcta-btn:hover { background:var(--gold); color:#101114; }
+
   /* error state */
   .inp.bad, .sel.bad { border-color:var(--err); }
   .errmsg { font-size:11px; color:var(--err); margin-top:6px; display:flex; gap:5px; align-items:center; }
@@ -216,7 +222,10 @@
               We only store what you enter here. No tracking, no sharing.
             </span>
           </div>
-          <div class="hint" style="text-align:center;margin-top:18px;">Prefer to schedule directly? <a href="/en/termin.html">Pick a time in the calendar.</a></div>
+          <div class="altcta">
+            <span class="altcta-txt">Prefer to schedule directly?</span>
+            <a class="altcta-btn" href="/en/termin.html">Pick a time in the calendar</a>
+          </div>
         </form>
       </div>
 
