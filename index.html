@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.className += " js";</script>
 <title>Skalar Advisory, Strategie · Transformation · Interim Management</title>
 <link rel="alternate" hreflang="en" href="https://skalar-advisory.de/en/">
 <link rel="alternate" hreflang="de" href="https://skalar-advisory.de/">
@@ -15,7 +16,7 @@
   .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
   header { padding:28px 0; border-bottom:1px solid var(--line); }
   .header-row { display:flex; justify-content:space-between; align-items:center; gap:16px; }
-  .lang a { color:var(--faint); text-decoration:none; font-size:12px; letter-spacing:2px; }
+  .lang a { color:var(--faint); text-decoration:none; font-size:12px; letter-spacing:2px; transition:color 120ms ease-out; }
   .lang a:hover, .lang a.active { color:var(--gold); }
   .brand { display:flex; align-items:center; gap:14px; }
   .brand svg { flex:none; }
@@ -23,10 +24,10 @@
   .brand-sub { color:var(--faint); letter-spacing:3px; font-size:10px; max-width:100%; }
   .brand > div { min-width:0; }
   .hero { padding-top:88px; padding-bottom:64px; }
-  h1 { color:#fff; font-size:clamp(28px, 5vw, 46px); line-height:1.15; letter-spacing:0.5px; max-width:720px; }
+  h1 { color:#fff; font-size:clamp(28px, 5vw, 46px); line-height:1.15; letter-spacing:-0.01em; max-width:720px; }
   h1 em { color:var(--gold); font-style:normal; }
   .hero p.fields { margin-top:22px; color:var(--faint); letter-spacing:2px; font-size:12px; text-transform:uppercase; }
-  .cta { display:inline-block; margin-top:36px; padding:14px 28px; border:1px solid var(--gold); color:var(--gold); text-decoration:none; letter-spacing:2px; font-size:13px; text-transform:uppercase; }
+  .cta { display:inline-block; margin-top:36px; padding:14px 28px; border:1px solid var(--gold); color:var(--gold); text-decoration:none; letter-spacing:2px; font-size:13px; text-transform:uppercase; transition:background 160ms ease-out, color 160ms ease-out; }
   .cta:hover { background:var(--gold); color:var(--black); }
   section { padding:64px 0; border-top:1px solid var(--line); }
   h2 { color:var(--gold); font-size:13px; letter-spacing:4px; text-transform:uppercase; margin-bottom:32px; }
@@ -50,7 +51,7 @@
   .contact a { color:var(--gold); text-decoration:none; }
   .contact p { font-size:16px; margin-top:8px; }
   footer { border-top:1px solid var(--line); padding:28px 0; font-size:12.5px; color:var(--faint); display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; }
-  footer a { color:var(--faint); text-decoration:none; }
+  footer a { color:var(--faint); text-decoration:none; transition:color 120ms ease-out; }
   footer a:hover { color:var(--gold); }
 
   /* ===== Leistungen: vier gleichwertige Bloecke ===== */
@@ -86,7 +87,7 @@
   .ncard p { font-size:12.5px; line-height:1.6; color:var(--grey); }
   .ai-cta { margin-top:52px; text-align:center; }
   .ai-cta .line { font-size:19px; color:#EDEDEA; font-weight:normal; margin-bottom:22px; letter-spacing:.2px; }
-  .ai-cta .btn { display:inline-block; font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold); border:1px solid var(--gold); border-radius:4px; padding:15px 34px; text-decoration:none; }
+  .ai-cta .btn { display:inline-block; font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold); border:1px solid var(--gold); border-radius:4px; padding:15px 34px; text-decoration:none; transition:background 160ms ease-out, color 160ms ease-out; }
   .ai-cta .btn:hover { background:var(--gold); color:var(--black); }
   .ai-cta .fine { margin-top:16px; font-size:11px; color:var(--faint); letter-spacing:.5px; }
 
@@ -110,6 +111,26 @@
     .stats { grid-template-columns:1fr; gap:14px; }
     .cv-item { flex-direction:column; gap:3px; padding:11px 0; }
     .cv-date { flex:none; }
+  }
+
+  /* ===== Design-Polish: Hover-States ===== */
+  .lcard, .ncard { transition:border-color 180ms ease-out, background 180ms ease-out; }
+  .lcard:hover { border-color:rgba(198,161,91,.45); background:#1C1D22; }
+  .ncard:hover { border-color:rgba(198,161,91,.30); }
+  header .brand { text-decoration:none; cursor:default; }
+  header .brand svg { transition:opacity 160ms ease-out; }
+  header .brand:hover svg { opacity:0.75; }
+
+  /* ===== Scroll-Reveal (Fade-Up Entrance) ===== */
+  .js .reveal { opacity:0; transform:translateY(16px); transition:opacity 400ms ease-out, transform 400ms ease-out; }
+  .js .reveal.is-visible { opacity:1; transform:none; }
+
+  /* ===== Reduced-Motion (WCAG 2.3.3) ===== */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+    }
   }
 </style>
 </head>
@@ -138,28 +159,28 @@
   <div class="wrap">
     <h2>Leistungen</h2>
     <div class="lgrid">
-      <div class="lcard">
+      <div class="lcard reveal">
         <svg class="ic" viewBox="0 0 34 30" fill="none" stroke="#C6A15B" stroke-width="1.6" aria-hidden="true"><path d="M4 26 L14 14 L20 20 L30 6"/><path d="M23 6 H30 V13"/></svg>
         <h3>Strategie &amp; Transformation</h3>
         <p>Digital- und Erlösstrategie (Paid, Advertising, Commerce), KI-Transformation in Newsroom, Marketing und Publishing, internationale Expansion, Due Diligence für Investoren.</p>
         <p class="int">Von der Digital- und Erlösstrategie bis zum betriebenen Agentic-AI-System (skalar AI), von der Idee bis zum laufenden Betrieb.</p>
       </div>
 
-      <div class="lcard">
+      <div class="lcard reveal">
         <svg class="ic" viewBox="0 0 34 30" fill="none" stroke="#C6A15B" stroke-width="1.6" aria-hidden="true"><circle cx="17" cy="9" r="5"/><path d="M6 26 c0-7 5-11 11-11 s11 4 11 11"/></svg>
         <h3>Interim Management</h3>
         <p>CDO oder Geschäftsführer Digital auf Zeit, für Aufbau, Skalierung oder Restrukturierung. 3 bis 12 Monate, operativ verantwortlich, mit Ergebnisdruck.</p>
         <p class="int">Operativ verantwortlich, inklusive Aufbau KI-gestützter Betriebsprozesse.</p>
       </div>
 
-      <div class="lcard">
+      <div class="lcard reveal">
         <svg class="ic" viewBox="0 0 34 30" fill="none" stroke="#C6A15B" stroke-width="1.6" aria-hidden="true"><path d="M17 3 L29 9 V17 c0 7-6 10-12 12 c-6-2-12-5-12-12 V9 Z"/><path d="M12 15 l4 4 l7-8"/></svg>
         <h3>Beirat &amp; Advisory</h3>
         <p>Laufendes Sparring für CEOs, Gesellschafter und Investoren, als Advisory-Retainer oder formelles Beirats- und Aufsichtsratsmandat.</p>
         <p class="int">Auch zu KI-Einführung und Agentic-AI, aus eigener Umsetzung statt aus der Theorie.</p>
       </div>
 
-      <div class="lcard ai">
+      <div class="lcard ai reveal">
         <svg class="ic" viewBox="0 0 34 30" fill="none" stroke="#C6A15B" stroke-width="1.6" aria-hidden="true"><rect x="4" y="20" width="6" height="7"/><rect x="14" y="13" width="6" height="14"/><rect x="24" y="5" width="6" height="22"/><circle cx="7" cy="15" r="1.6" fill="#C6A15B" stroke="none"/><circle cx="17" cy="8" r="1.6" fill="#C6A15B" stroke="none"/><circle cx="27" cy="3" r="1.2" fill="#C6A15B" stroke="none"/></svg>
         <h3>KI, die <span class="k">läuft</span>, nicht nur berät</h3>
         <p>Die meisten reden über KI. Skalar Advisory betreibt sie. skalar AI ist ein Agentic-AI-System: ein Orchestrator koordiniert spezialisierte Agenten, die reale Betriebsaufgaben übernehmen. Kein Tool, kein Konzeptpapier, sondern ein betriebenes Team.</p>
@@ -189,17 +210,17 @@
     <div class="caption">Live-Ansicht des betriebenen Systems &middot; anonymisiert, ohne echte Namen, Daten oder Beträge</div>
 
     <div class="ngrid">
-      <div class="ncard">
+      <div class="ncard reveal">
         <svg class="ic" viewBox="0 0 30 30" fill="none" stroke="#C6A15B" stroke-width="1.6" aria-hidden="true"><rect x="3" y="18" width="5" height="9"/><rect x="12" y="11" width="5" height="16"/><rect x="21" y="4" width="5" height="23"/></svg>
         <h4>Skalieren ohne Kopfzahl</h4>
         <p>Ein Mensch plus ein Agententeam leistet, wofür sonst eine Abteilung nötig wäre. Wachstum ohne proportional wachsende Kosten.</p>
       </div>
-      <div class="ncard">
+      <div class="ncard reveal">
         <svg class="ic" viewBox="0 0 30 30" fill="none" stroke="#C6A15B" stroke-width="1.6" aria-hidden="true"><path d="M6 15 l6 6 l12 -13"/></svg>
         <h4>Umsetzung statt PowerPoint</h4>
         <p>Ein real betriebenes System als Referenz, kein Strategiepapier. Sie sehen, was läuft, bevor Sie darüber entscheiden.</p>
       </div>
-      <div class="ncard">
+      <div class="ncard reveal">
         <svg class="ic" viewBox="0 0 30 30" fill="none" stroke="#C6A15B" stroke-width="1.6" aria-hidden="true"><path d="M15 3 L25 8 V15 c0 6-5 9-10 12 c-5-3-10-6-10-12 V8 Z"/></svg>
         <h4>Kontrolliert und sicher</h4>
         <p>Kritische Aktionen laufen nie autonom, sondern nur mit Ihrer Freigabe. Kosten gedeckelt, private und geschäftliche Daten getrennt.</p>
@@ -218,10 +239,10 @@
   <div class="wrap">
     <h2>Track Record</h2>
     <div class="stats">
-      <div class="stat"><b>20</b><span>Jahre Medienindustrie in operativer Verantwortung</span></div>
-      <div class="stat"><b>15</b><span>Ländergesellschaften im Online-Publishing aufgebaut</span></div>
-      <div class="stat"><b>#1</b><span>Deutschlands führendes Nachrichtenportal aufgebaut</span></div>
-      <div class="stat stat-wide"><b>kontinuierliche</b><span>Transformation des Businesses</span></div>
+      <div class="stat reveal"><b>20</b><span>Jahre Medienindustrie in operativer Verantwortung</span></div>
+      <div class="stat reveal"><b>15</b><span>Ländergesellschaften im Online-Publishing aufgebaut</span></div>
+      <div class="stat reveal"><b>#1</b><span>Deutschlands führendes Nachrichtenportal aufgebaut</span></div>
+      <div class="stat stat-wide reveal"><b>kontinuierliche</b><span>Transformation des Businesses</span></div>
     </div>
   </div>
 </section>
@@ -233,11 +254,11 @@
     <p>Der Name ist Programm: <em style="color:#fff;">Skalar</em>, vom lateinischen <em>scala</em>, die Treppe. Geschäfte Stufe für Stufe auf das nächste Niveau bringen, mit klarem Wert und ohne Beiwerk.</p>
     <div class="cv">
       <div class="cv-label">Stationen</div>
-      <div class="cv-item"><div class="cv-date">seit 2026</div><div><span class="cv-role">Chief Operating Officer, Ströer SE &amp; Co. KGaA</span><div class="cv-desc">Transformation des Gesamtkonzerns zur One AI-driven Company</div></div></div>
-      <div class="cv-item"><div class="cv-date">seit 2016</div><div><span class="cv-role">Group CEO, Ströer Publishing / t-online</span><div class="cv-desc">Turnaround zu Deutschlands führendem Nachrichtenportal, EBITDA von 27 auf über 55 Mio. € mehr als verdoppelt, 670 Mitarbeitende</div></div></div>
-      <div class="cv-item"><div class="cv-date">2010–2016</div><div><span class="cv-role">Vorstand / Managing Director International, aufeminin.com S.A., Paris</span><div class="cv-desc">15 Ländergesellschaften aufgebaut, internationaler Umsatzanteil von unter 10 auf über 80 %</div></div></div>
-      <div class="cv-item"><div class="cv-date">2008–2016</div><div><span class="cv-role">Managing Director, gofeminin.de GmbH, Köln</span><div class="cv-desc">Führung der deutschen Marktführer gofeminin.de und Onmeda</div></div></div>
-      <div class="cv-item"><div class="cv-date">2001–2008</div><div><span class="cv-role">Frühere Stationen</span><div class="cv-desc">Director Health Markets (OnVista Media), Management- und IT-Beratung; Diplom-Kaufmann, RWTH Aachen</div></div></div>
+      <div class="cv-item reveal"><div class="cv-date">seit 2026</div><div><span class="cv-role">Chief Operating Officer, Ströer SE &amp; Co. KGaA</span><div class="cv-desc">Transformation des Gesamtkonzerns zur One AI-driven Company</div></div></div>
+      <div class="cv-item reveal"><div class="cv-date">seit 2016</div><div><span class="cv-role">Group CEO, Ströer Publishing / t-online</span><div class="cv-desc">Turnaround zu Deutschlands führendem Nachrichtenportal, EBITDA von 27 auf über 55 Mio. € mehr als verdoppelt, 670 Mitarbeitende</div></div></div>
+      <div class="cv-item reveal"><div class="cv-date">2010–2016</div><div><span class="cv-role">Vorstand / Managing Director International, aufeminin.com S.A., Paris</span><div class="cv-desc">15 Ländergesellschaften aufgebaut, internationaler Umsatzanteil von unter 10 auf über 80 %</div></div></div>
+      <div class="cv-item reveal"><div class="cv-date">2008–2016</div><div><span class="cv-role">Managing Director, gofeminin.de GmbH, Köln</span><div class="cv-desc">Führung der deutschen Marktführer gofeminin.de und Onmeda</div></div></div>
+      <div class="cv-item reveal"><div class="cv-date">2001–2008</div><div><span class="cv-role">Frühere Stationen</span><div class="cv-desc">Director Health Markets (OnVista Media), Management- und IT-Beratung; Diplom-Kaufmann, RWTH Aachen</div></div></div>
     </div>
   </div>
 </section>
@@ -257,6 +278,31 @@
     <span><a href="/impressum.html">Impressum</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="/datenschutz.html">Datenschutz</a></span>
   </div>
 </footer>
+
+<script>
+(function () {
+  var els = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
+  if (!els.length) return;
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || !("IntersectionObserver" in window)) {
+    els.forEach(function (el) { el.classList.add("is-visible"); });
+    return;
+  }
+  // Stagger cards within the same parent group (80ms steps)
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var el = entry.target;
+      var siblings = Array.prototype.slice.call(el.parentNode.querySelectorAll(".reveal"));
+      var idx = siblings.indexOf(el);
+      el.style.transitionDelay = (idx > 0 ? idx * 80 : 0) + "ms";
+      el.classList.add("is-visible");
+      io.unobserve(el);
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+  els.forEach(function (el) { io.observe(el); });
+})();
+</script>
 
 </body>
 </html>
