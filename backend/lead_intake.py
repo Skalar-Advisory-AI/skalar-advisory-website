@@ -112,7 +112,7 @@ def send_ack_email(lead):
         "aufzunehmen. Wir geben sie nicht an Dritte weiter. Wie wir mit Ihren "
         "Daten umgehen, steht in unserer Datenschutzerklärung: "
         "https://skalar-advisory.de/datenschutz . Bis in Kürze. "
-        "Emma Clarke, Skalar Advisory, https://skalar-advisory.de"
+        "Skalar Advisory GmbH, https://skalar-advisory.de"
     )
     # Platzhalter: echten SMTP/Mailer-Versand verdrahtet Scotty.
     _log(f"send_ack_email waere gesendet an Lead {lead['lead_id']} "
