@@ -29,4 +29,4 @@ In `_redirects` eine Zeile ergaenzen:
 
     https://skalar-advisory.pro/kunde/KUERZEL DRIVE-ORDNER-URL 302!
 
-Offen: USt-IdNr. im Impressum nachtragen, sobald vergeben.
+Offen: USt-IdNr. (und ggf. Geschaeftsanschrift) im Impressum nachtragen, sobald vergeben/geklaert; Abschnitt "Umsatzsteuer-ID" dann wieder einfuegen.
