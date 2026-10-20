@@ -102,7 +102,7 @@ def send_ack_email(lead):
 
     Scotty verdrahtet den echten Mailversand. Template unten 1:1 aus Pens Copy.
     """
-    sender = "Emma Clarke, Skalar Advisory"
+    sender = "Skalar Advisory GmbH"
     subject = "Ihre Anfrage bei Skalar Advisory ist angekommen"
     body = (
         "Guten Tag, vielen Dank für Ihre Anfrage zu skalar AI. Sie ist bei uns "
