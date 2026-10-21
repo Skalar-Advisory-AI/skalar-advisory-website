@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0",
+  "pr": {
+    "repo": "Skalar-Advisory-AI/skalar-advisory-website",
+    "branch": "ada/en-impressum",
+    "titel": "EN: englisches Impressum /en/impressum, Footer-Links EN, hreflang DE<->EN",
+    "target_base": "main"
+  },
+  "auftrag_von": "JARVIS (Marc), 21.10.2026",
+  "zusammenfassung": "Neue Seite en/impressum.html mit denselben Pflichtangaben wie impressum.html (Skalar Advisory GmbH, Prunkweg 138, 52080 Aachen, Managing Director Marc Schmitz, Amtsgericht Aachen HRB 30411, Kontakt). Keine USt-IdNr./Steuernummer, kein Platzhalter. Footer-Links der EN-Seiten zeigen auf /en/impressum.html, DE-Footer unveraendert. hreflang de/en zwischen beiden Impressen.",
+  "aenderungen": [
+    {
+      "datei": "en/impressum.html",
+      "scope": "neu",
+      "hinweis": "Uebersetzung des DE-Impressums, identisches Markup/CSS (Struktur 1:1 von impressum.html, html lang=en, noindex wie DE)."
+    },
+    {
+      "datei": "impressum.html",
+      "scope": "geaendert",
+      "hinweis": "Nur zwei hreflang-Link-Tags im head ergaenzt, Inhalt unveraendert."
+    },
+    {
+      "datei": "en/index.html",
+      "scope": "geaendert",
+      "hinweis": "Footer-Link Imprint auf /en/impressum.html."
+    },
+    {
+      "datei": "en/termin.html",
+      "scope": "geaendert",
+      "hinweis": "Footer-Link Imprint auf /en/impressum.html."
+    },
+    {
+      "datei": "en/kontakt-ki.html",
+      "scope": "geaendert",
+      "hinweis": "Footer-Link Imprint auf /en/impressum.html."
+    },
+    {
+      "datei": "portal/en/index.html",
+      "scope": "geaendert",
+      "hinweis": "Footer-Link Imprint auf https://skalar-advisory.de/en/impressum.html (EN-Portalseite, laeuft auf .pro)."
+    },
+    {
+      "datei": "README.md",
+      "scope": "geaendert",
+      "hinweis": "Strukturzeile: EN-Impressum erwaehnt, kein EN-Datenschutz."
+    },
+    {
+      "datei": "evidence/en-impressum-desktop.png",
+      "scope": "neu",
+      "hinweis": "Screenshot 1280px"
+    },
+    {
+      "datei": "evidence/en-impressum-mobile.png",
+      "scope": "neu",
+      "hinweis": "Screenshot 390px"
+    }
+  ],
+  "tests_ausgefuehrt": [
+    {
+      "kommando": "python3 -m http.server 8765 im Repo-Root + Link-Check-Skript ueber alle internen href/src aller HTML-Dateien (126 Links)",
+      "ergebnis": "pass",
+      "detail": "checked 126, bad 0 (lead-intake-Proxy und portal ausgenommen, nur unter Netlify erreichbar)"
+    },
+    {
+      "kommando": "curl -s -o /dev/null -w %{http_code} localhost:8765/en/impressum.html",
+      "ergebnis": "pass",
+      "detail": "200"
+    },
+    {
+      "kommando": "LC_ALL=C git diff | grep '^+' | grep -P '\\xe2\\x80[\\x93\\x94]'",
+      "ergebnis": "pass",
+      "detail": "0 Treffer, auch en/impressum.html ohne Em-/En-Dash"
+    }
+  ],
+  "verifikation": [
+    {
+      "art": "screenshot",
+      "beleg": "evidence/en-impressum-desktop.png (1280x900) und evidence/en-impressum-mobile.png (390x844)",
+      "kontext": "Headless Chrome gegen lokalen Server; Mobil scrollWidth=390, kein horizontaler Overflow, alle Abschnitte lesbar."
+    },
+    {
+      "art": "curl",
+      "beleg": "grep -rn impressum --include=*.html: alle en/*.html und portal/en verweisen auf en/impressum, alle DE-Seiten weiter auf impressum.html",
+      "kontext": "Footer-Umstellung per Grep belegt."
+    }
+  ],
+  "nicht_verifiziert": [
+    "Live-Aufruf https://skalar-advisory.de/en/impressum (ohne .html, Netlify-Pretty-URL) erst nach Merge/Netlify-Deploy pruefbar, lokaler python-Server kennt keine Pretty-URLs.",
+    "Der rechtliche Wortlaut der Uebersetzung ist keine Rechtsberatung und nicht von Justice/Solomon geprueft.",
+    "Kein EN-Datenschutz vorhanden: EN-Seiten verlinken weiter auf /datenschutz.html (Deutsch). Nicht Teil dieses PR.",
+    "Keine Sitemap im Repo vorhanden, daher nichts ergaenzt. Kein robots.txt, keine canonical-Tags in den bestehenden Seiten.",
+    "Kein CI/Evidence-Gate im Website-Repo, Evidence ist reine Konvention."
+  ],
+  "timestamp": "2026-10-21T00:00:00Z",
+  "erstellt_von": "ada"
+}
