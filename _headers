@@ -1,0 +1,11 @@
+# Security-Header fuer alle Seiten (DE + EN + Portal), Scotty 30.10.2026, IDEE-0191.
+# HSTS bewusst OHNE includeSubDomains/preload: autoconfig.skalar-advisory.de (Strato)
+# hat kein gueltiges TLS-Zertifikat, includeSubDomains wuerde es im Browser brechen.
+# CSP zunaechst nur als Report-Only (Beobachtung), erst danach scharf schalten.
+/*
+  Strict-Transport-Security: max-age=31536000
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), serial=(), bluetooth=(), magnetometer=(), gyroscope=(), accelerometer=(), browsing-topics=()
+  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self'; frame-src https://calendar.google.com; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; manifest-src 'self'
