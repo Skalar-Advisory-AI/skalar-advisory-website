@@ -7,7 +7,7 @@ Statische Website, gehostet bei Netlify (Projekt "skalar-advisory").
 - `index.html` – Startseite Deutsch
 - `en/` – englische Version (Startseite, Terminseite)
 - `termin.html` – Terminbuchung (Google Kalender, 60 Min.)
-- `impressum.html`, `datenschutz.html` – Rechtstexte
+- `impressum.html`, `datenschutz.html` – Rechtstexte (EN-Impressum: `en/impressum.html`, kein EN-Datenschutz)
 - `portal/` – Kundenportal (wird auf skalar-advisory.pro ausgeliefert)
 - `_redirects` – Domain-Routing (.com zu /en/, .pro zum Portal, Kunden-Kurzlinks)
 - `netlify.toml` – Netlify-Konfiguration (kein Build-Schritt)
