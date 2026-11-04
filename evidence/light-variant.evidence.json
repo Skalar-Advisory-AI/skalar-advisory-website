@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0",
+  "pr": {
+    "repo": "Skalar-Advisory-AI/skalar-advisory-website",
+    "branch": "ada/light-variant",
+    "titel": "Light-Variante A (Logo 2) als separate Preview unter /light/, DE + EN",
+    "target_base": "main",
+    "nummer": 19
+  },
+  "auftrag_von": "JARVIS (Marc-Freigabe Light-Variante, Pixel-Briefing light_1104), 04.11.2026",
+  "zusammenfassung": "Neue Dateien light/index.html und light/en/index.html: Kopie der origin/main-Seiten plus Pixels Override-Layer (light.css) als zweites style-Element, Logo 2 (Signet #C6A15B, Wortmarke #101114), theme-color #FFFFFF, noindex, hreflang/Sprachumschalter auf /light/ und /light/en/. Inhalt: EBITDA mit absoluter Zahl wie live, Station Stroeer COO ohne seit/since. Bestehende Seiten unveraendert. Abweichung von light.css: skalar-AI-Zeile auf Logo 2 (Gold-Text auf #F4F4F2 nur 4,26:1, AA verfehlt).",
+  "aenderungen": [
+    {
+      "datei": "light/index.html",
+      "scope": "neu",
+      "hinweis": "DE Light-Variante, 409 Zeilen"
+    },
+    {
+      "datei": "light/en/index.html",
+      "scope": "neu",
+      "hinweis": "EN Light-Variante, 399 Zeilen"
+    },
+    {
+      "datei": "evidence/light-variant-de_light_375.png",
+      "scope": "neu",
+      "hinweis": "Screenshot DE 375px"
+    },
+    {
+      "datei": "evidence/light-variant-de_light_768.png",
+      "scope": "neu",
+      "hinweis": "Screenshot DE 768px"
+    },
+    {
+      "datei": "evidence/light-variant-de_light_1440.png",
+      "scope": "neu",
+      "hinweis": "Screenshot DE 1440px"
+    },
+    {
+      "datei": "evidence/light-variant-en_light_375.png",
+      "scope": "neu",
+      "hinweis": "Screenshot EN 375px"
+    },
+    {
+      "datei": "evidence/light-variant-en_light_768.png",
+      "scope": "neu",
+      "hinweis": "Screenshot EN 768px"
+    },
+    {
+      "datei": "evidence/light-variant-en_light_1440.png",
+      "scope": "neu",
+      "hinweis": "Screenshot EN 1440px"
+    },
+    {
+      "datei": "evidence/light-variant-de_light_states_1440.png",
+      "scope": "neu",
+      "hinweis": "Screenshot DE 1440px mit erzwungenen Zustaenden: CTA-Hover, Karte-2-Hover, Fokusring Sprachlink (Hover-Werte per Harness-Style 1:1 aus den Regeln gesetzt)"
+    }
+  ],
+  "tests_ausgefuehrt": [
+    {
+      "kommando": "python3 html.parser Stack-Check light/index.html + light/en/index.html",
+      "ergebnis": "pass",
+      "detail": "stack [] bad [] fuer beide Dateien"
+    },
+    {
+      "kommando": "grep -c U+2014 light/index.html light/en/index.html",
+      "ergebnis": "pass",
+      "detail": "0 und 0"
+    },
+    {
+      "kommando": "git diff origin/main --stat -- index.html en/index.html",
+      "ergebnis": "pass",
+      "detail": "leer, bestehende Seiten unveraendert"
+    },
+    {
+      "kommando": "Kontrastberechnung WCAG (relative Luminanz) fuer alle Text/Hintergrund-Paare des Light-Layers",
+      "ergebnis": "pass",
+      "detail": "Ink/Papier 18.88, Text2/Papier 7.41, Label/Papier 5.30, Gold-Ink/Papier 4.70, Ink/Karte 17.14, Text2/Karte 6.73, Label/Karte 4.81, Ink/Gold (CTA-Hover) 7.78. Gold-Ink/Karte 4.26 wurde durch Logo-2-Regel fuer .brandrow vermieden. Signet #C6A15B/Papier 2.43 ist Logo-Grafik, aria-hidden."
+    },
+    {
+      "kommando": "headless Chromium (chrome-linux64, --disable-dev-shm-usage --force-prefers-reduced-motion --virtual-time-budget=3000) DE+EN bei 375/768/1440",
+      "ergebnis": "pass",
+      "detail": "7 PNGs, per Vision geprueft: Hintergrund weiss, Signet Antikgold, Wortmarke schwarz, 4/2/1 Spalten, skalar-AI-Sektion #F4F4F2 mit weissen Kacheln und Dashboard-Bild, Station 2026 ohne seit/since, EBITDA 27/55 vorhanden, kein dunkles Panel ausser Dashboard-Screenshot"
+    }
+  ],
+  "verifikation": [
+    {
+      "art": "git_sha",
+      "beleg": "3cc9f29181a202316ad7e1e6ca3cc70d2692804f",
+      "kontext": "Feature-Commit auf ada/light-variant, remote head via git ls-remote bestaetigt"
+    },
+    {
+      "art": "screenshot",
+      "beleg": "evidence/light-variant-*.png (7 Dateien)",
+      "kontext": "Rendering aus Temp-Kopie mit absolutem /assets/-Pfad (file:// kann Root-Pfade nicht aufloesen), Markup sonst identisch"
+    },
+    {
+      "art": "curl",
+      "beleg": "POST /repos/Skalar-Advisory-AI/skalar-advisory-website/pulls -> number 19, state open",
+      "kontext": "https://github.com/Skalar-Advisory-AI/skalar-advisory-website/pull/19"
+    }
+  ],
+  "nicht_verifiziert": [
+    "Netlify Deploy-Preview fuer den PR-Head: kein Netlify-Status von Adas Seite pruefbar, Preview-URL erst nach Merge (/light/, /light/en/) oder ueber Scottys Netlify-Zugang",
+    "Echte :hover/:focus-Zustaende im Browser (headless rendert kein echtes Hover, Zustaende wurden per Harness-Style erzwungen)",
+    "Abgleich mit Pixels Soll-Screenshots de_a_*/en_a_* (liegen nur bei Pixel, dort noch mit Logo 1)",
+    "Originaldateien HANDOFF_ADA_light.md / light.css / Mockups nicht auf dem Build-Host, Inhalt per Peer-Mesh-Antwort von Pixel uebernommen"
+  ],
+  "timestamp": "2026-11-04T18:47:57Z",
+  "erstellt_von": "Ada"
+}
