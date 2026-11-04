@@ -8,7 +8,7 @@
     "nummer": 19
   },
   "auftrag_von": "JARVIS (Marc-Freigabe Light-Variante, Pixel-Briefing light_1104), 04.11.2026",
-  "zusammenfassung": "Neue Dateien light/index.html und light/en/index.html: Kopie der origin/main-Seiten plus Pixels Override-Layer (light.css) als zweites style-Element, Logo 2 (Signet #C6A15B, Wortmarke #101114), theme-color #FFFFFF, noindex, hreflang/Sprachumschalter auf /light/ und /light/en/. Inhalt: EBITDA mit absoluter Zahl wie live, Station Stroeer COO ohne seit/since. Bestehende Seiten unveraendert. Abweichung von light.css: skalar-AI-Zeile auf Logo 2 (Gold-Text auf #F4F4F2 nur 4,26:1, AA verfehlt).",
+  "zusammenfassung": "Neue Dateien light/index.html und light/en/index.html: Kopie der origin/main-Seiten plus Pixels Override-Layer (light.css) als zweites style-Element, Logo 2 (Signet #C6A15B, Wortmarke #101114), theme-color #FFFFFF, noindex, hreflang/Sprachumschalter auf /light/ und /light/en/. Inhalt (Nachschaerfung JARVIS 04.11.): EBITDA nur mit absoluter Zahl (27 auf ueber 55 Mio. EUR / EUR27m to over EUR55m), Zusatz \"mehr als verdoppelt\"/\"more than doubled\" entfernt; beide Stroeer-Stationen (COO 2026, Group CEO 2016) ohne seit/since. Bestehende Seiten unveraendert. Abweichung von light.css: skalar-AI-Zeile auf Logo 2 (Gold-Text auf #F4F4F2 nur 4,26:1, AA verfehlt).",
   "aenderungen": [
     {
       "datei": "light/index.html",
@@ -107,5 +107,14 @@
     "Originaldateien HANDOFF_ADA_light.md / light.css / Mockups nicht auf dem Build-Host, Inhalt per Peer-Mesh-Antwort von Pixel uebernommen"
   ],
   "timestamp": "2026-11-04T18:47:57Z",
-  "erstellt_von": "Ada"
+  "erstellt_von": "Ada",
+  "nachtraege": [
+    {
+      "datum": "2026-11-04",
+      "commit": "(siehe git log, Folge-Commit zu d912c22)",
+      "aenderung": "light/index.html + light/en/index.html: cv-date Group CEO seit 2016 -> 2016 (EN since 2016 -> 2016); EBITDA-Satz ohne mehr als verdoppelt / more than doubled. Screenshots DE/EN 375/768/1440 neu aufgenommen (lokaler http.server, CDP captureScreenshot mit Clip auf Dokumenthoehe).",
+      "verifikation": "innerText der ersten zwei .cv-item per CDP: DE \"2016 | Group CEO ... EBITDA von 27 auf ueber 55 Mio. EUR, 670 Mitarbeitende\", EN \"2016 | Group CEO ... EBITDA from EUR27m to over EUR55m, 670 employees\". grep auf seit/since/verdoppelt/doubled in beiden Dateien: 0 Treffer.",
+      "offen": "Interpretation: Auftrag nennt Station Stroeer ohne seit; umgesetzt fuer beide Stroeer-Zeilen (2026 und 2016). Falls nur die COO-Zeile gemeint war, Zeile 2016 zurueck auf seit 2016 (1 Zeile pro Sprache)."
+    }
+  ]
 }
