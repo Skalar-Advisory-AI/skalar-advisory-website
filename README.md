@@ -4,8 +4,10 @@ Statische Website, gehostet bei Netlify (Projekt "skalar-advisory").
 
 ## Struktur
 
-- `index.html` – Startseite Deutsch
+- `index.html` – Startseite Deutsch (weisse Fassung, seit 5.11.2026 Hauptseite)
 - `en/` – englische Version (Startseite, Terminseite)
+- `dark/`, `en/dark/` – schwarze Fassung als Rueckfall (noindex, nicht in der Sitemap)
+- `sitemap.xml`, `robots.txt` – Index-Steuerung (Rueckfall-Pfade ausgeschlossen)
 - `termin.html` – Terminbuchung (Google Kalender, 60 Min.)
 - `impressum.html`, `datenschutz.html` – Rechtstexte (EN-Impressum: `en/impressum.html`, kein EN-Datenschutz)
 - `portal/` – Kundenportal (wird auf skalar-advisory.pro ausgeliefert)

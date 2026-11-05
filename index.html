@@ -5,8 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.className += " js";</script>
 <title>Skalar Advisory, Strategie · Transformation · Interim Management</title>
+<link rel="canonical" href="https://skalar-advisory.de/">
 <link rel="alternate" hreflang="en" href="https://skalar-advisory.de/en/">
 <link rel="alternate" hreflang="de" href="https://skalar-advisory.de/">
+<link rel="alternate" hreflang="x-default" href="https://skalar-advisory.de/">
 <meta name="description" content="Skalar Advisory: Strategie, Transformation und Interim Management für Digital Publishing, Medien & Marketing und AI. 20 Jahre operative Erfahrung im Aufbau und der Skalierung digitaler Mediengeschäfte.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' fill='%23101114'/%3E%3Cpath d='M 7 39 H 19 V 27 H 31 V 15 H 43' fill='none' stroke='%23C6A15B' stroke-width='3.2'/%3E%3C/svg%3E">
 <style>
@@ -139,7 +141,100 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#101114">
+  <meta name="theme-color" content="#FFFFFF">
+<style id="light">
+/* =====================================================================
+   Skalar Advisory, Light-Variante (Entwurf Pixel, 04.11.2026)
+   Override-Layer: wird NACH dem bestehenden <style> geladen.
+   Nur freigegebene Toene aus dem Brand Guide (Hell-Palette 19.10.2026):
+   Papier #FFFFFF, Karte #F4F4F2, Linie #DEDEE0, Text #101114,
+   Sekundaer #55555A, Label #6B6B70, Antikgold #C6A15B (nur Linie/Flaeche/Signet),
+   Gold dunkel #8A7040 (Gold als Text, Zahlen, Icons auf Weiss, 4,7:1).
+   Regel: Gold-Text nur auf Weiss, nie auf #F4F4F2 (dort nur 4,3:1).
+   Variante A (ganze Seite hell), Logo 2 (Signet Antikgold, Wortmarke Tiefschwarz).
+   ===================================================================== */
+:root {
+  --paper:#FFFFFF; --card:#F4F4F2; --line-l:#DEDEE0; --ink:#101114;
+  --text2:#55555A; --label:#6B6B70; --gold:#C6A15B; --gold-ink:#8A7040;
+}
+body { background:var(--paper); color:var(--text2); }
+::selection { background:rgba(198,161,91,.35); color:var(--ink); }
+a:focus-visible, .cta:focus-visible, .btn:focus-visible { outline:2px solid var(--gold-ink); outline-offset:3px; }
+
+/* Header */
+header { border-bottom-color:var(--line-l); background:var(--paper); }
+.brand-name { color:var(--gold-ink); }
+.brand-sub { color:var(--label); }
+.lang a { color:var(--label); }
+.lang a:hover, .lang a.active { color:var(--gold-ink); }
+
+/* Hero */
+h1 { color:var(--ink); }
+h1 em { color:var(--gold-ink); }
+.hero p.fields { color:var(--label); }
+.cta { border-color:var(--gold-ink); color:var(--gold-ink); }
+.cta:hover { background:var(--gold); border-color:var(--gold); color:var(--ink); }
+
+/* Sektionen */
+section { border-top-color:var(--line-l); }
+h2 { color:var(--gold-ink); }
+
+/* Leistungen: weisse Karten mit Linie, Goldkante oben als Markenakzent */
+.lcard, .card { background:var(--paper); border-color:var(--line-l); box-shadow:inset 0 2px 0 0 var(--gold); }
+.lcard h3, .card h3 { color:var(--ink); }
+.lcard p, .card p { color:var(--text2); }
+.lcard .int { border-top-color:var(--line-l); color:var(--label); }
+.lcard .int::before { color:var(--gold-ink); }
+.lcard .tag { color:var(--label); }
+.lcard.ai { border-color:rgba(198,161,91,.70); }
+.lcard.ai h3 .k, .lcard.ai .tag { color:var(--gold-ink); }
+.lcard:hover { background:var(--paper); border-color:var(--gold); box-shadow:inset 0 2px 0 0 var(--gold), 0 10px 28px rgba(16,17,20,.07); }
+.ic { stroke:var(--gold-ink); }
+.ic circle[fill] { fill:var(--gold-ink); }
+
+/* skalar AI, Variante A (alles hell): Sektion auf Karte-Grau, Kacheln weiss */
+body:not(.band) .ai-sec { background:var(--card); }
+body:not(.band) .subbrand { color:var(--label); }
+/* skalar-AI-Zeile analog Logo 2: Signet Antikgold, Wortmarke Tiefschwarz (AA: Gold-Text auf #F4F4F2 nur 4,3:1) */
+body:not(.band) .brandrow .wm { color:var(--ink); }
+body:not(.band) .brandrow .wm span { color:var(--label); }
+body:not(.band) .brandrow .stair g { fill:var(--gold); }
+body:not(.band) .ai-head { color:var(--ink); }
+body:not(.band) .ai-lede { color:var(--text2); }
+body:not(.band) .shot-embed { border-color:var(--line-l); box-shadow:0 24px 60px rgba(16,17,20,.16); }
+body:not(.band) .caption { color:var(--label); }
+body:not(.band) .ncard { background:var(--paper); border-color:var(--line-l); }
+body:not(.band) .ncard:hover { border-color:var(--gold); }
+body:not(.band) .ncard h4 { color:var(--ink); }
+body:not(.band) .ncard p { color:var(--text2); }
+body:not(.band) .ai-cta .line { color:var(--ink); }
+body:not(.band) .ai-cta .btn { color:var(--gold-ink); border-color:var(--gold-ink); background:var(--paper); }
+body:not(.band) .ai-cta .btn:hover { background:var(--gold); border-color:var(--gold); color:var(--ink); }
+body:not(.band) .ai-cta .fine { color:var(--label); }
+
+/* Track Record */
+.stat b { color:var(--gold-ink); }
+.stat span { color:var(--label); }
+
+/* Ueber + Stationen */
+.about p { color:var(--text2); }
+.about p em[style] { color:var(--ink) !important; }
+.cv-label, .cv-date { color:var(--gold-ink); }
+.cv-item, .cv-item:last-child { border-color:var(--line-l); }
+.cv-role { color:var(--ink); }
+.cv-desc { color:var(--text2); }
+
+/* Kontakt + Footer */
+.contact a { color:var(--gold-ink); }
+.contact a:hover { text-decoration:underline; text-underline-offset:4px; text-decoration-color:var(--gold); }
+footer { border-top-color:var(--line-l); color:var(--label); }
+footer a { color:var(--label); }
+footer a:hover { color:var(--gold-ink); }
+
+/* Logo 2: Signet Antikgold, Wortmarke Tiefschwarz (Marc-Freigabe 04.11.2026) */
+header .brand svg path { stroke:var(--gold); }
+.brand-name { color:var(--ink); }
+</style>
 </head>
 <body>
 
@@ -261,8 +356,8 @@
     <p>Der Name ist Programm: <em style="color:#fff;">Skalar</em>, vom lateinischen <em>scala</em>, die Treppe. Geschäfte Stufe für Stufe auf das nächste Niveau bringen, mit klarem Wert und ohne Beiwerk.</p>
     <div class="cv">
       <div class="cv-label">Stationen</div>
-      <div class="cv-item reveal"><div class="cv-date">seit 2026</div><div><span class="cv-role">Chief Operating Officer, Ströer SE &amp; Co. KGaA</span><div class="cv-desc">Transformation des Gesamtkonzerns zur One AI-driven Company</div></div></div>
-      <div class="cv-item reveal"><div class="cv-date">seit 2016</div><div><span class="cv-role">Group CEO, Ströer Publishing / t-online</span><div class="cv-desc">Turnaround zu Deutschlands führendem Nachrichtenportal, EBITDA von 27 auf über 55 Mio. € mehr als verdoppelt, 670 Mitarbeitende</div></div></div>
+      <div class="cv-item reveal"><div class="cv-date">2026</div><div><span class="cv-role">Chief Operating Officer, Ströer SE &amp; Co. KGaA</span><div class="cv-desc">Transformation des Gesamtkonzerns zur One AI-driven Company</div></div></div>
+      <div class="cv-item reveal"><div class="cv-date">2016</div><div><span class="cv-role">Group CEO, Ströer Publishing / t-online</span><div class="cv-desc">Turnaround zu Deutschlands führendem Nachrichtenportal, EBITDA von 27 auf über 55 Mio. €, 670 Mitarbeitende</div></div></div>
       <div class="cv-item reveal"><div class="cv-date">2010–2016</div><div><span class="cv-role">Vorstand / Managing Director International, aufeminin.com S.A., Paris</span><div class="cv-desc">15 Ländergesellschaften aufgebaut, internationaler Umsatzanteil von unter 10 auf über 80 %</div></div></div>
       <div class="cv-item reveal"><div class="cv-date">2008–2016</div><div><span class="cv-role">Managing Director, gofeminin.de GmbH, Köln</span><div class="cv-desc">Führung der deutschen Marktführer gofeminin.de und Onmeda</div></div></div>
       <div class="cv-item reveal"><div class="cv-date">2001–2008</div><div><span class="cv-role">Frühere Stationen</span><div class="cv-desc">Director Health Markets (OnVista Media), Management- und IT-Beratung; Diplom-Kaufmann, RWTH Aachen</div></div></div>

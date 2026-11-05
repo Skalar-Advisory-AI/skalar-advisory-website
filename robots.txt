@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /dark/
+Disallow: /en/dark/
+
+Sitemap: https://skalar-advisory.de/sitemap.xml

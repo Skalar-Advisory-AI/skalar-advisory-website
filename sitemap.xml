@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://skalar-advisory.de/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://skalar-advisory.de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://skalar-advisory.de/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://skalar-advisory.de/"/>
+  </url>
+  <url>
+    <loc>https://skalar-advisory.de/en/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://skalar-advisory.de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://skalar-advisory.de/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://skalar-advisory.de/"/>
+  </url>
+  <url>
+    <loc>https://skalar-advisory.de/kontakt-ki.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://skalar-advisory.de/kontakt-ki.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://skalar-advisory.de/en/kontakt-ki.html"/>
+  </url>
+  <url>
+    <loc>https://skalar-advisory.de/en/kontakt-ki.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://skalar-advisory.de/kontakt-ki.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://skalar-advisory.de/en/kontakt-ki.html"/>
+  </url>
+  <url>
+    <loc>https://skalar-advisory.de/termin.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://skalar-advisory.de/termin.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://skalar-advisory.de/en/termin.html"/>
+  </url>
+  <url>
+    <loc>https://skalar-advisory.de/en/termin.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://skalar-advisory.de/termin.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://skalar-advisory.de/en/termin.html"/>
+  </url>
+  <url>
+    <loc>https://skalar-advisory.de/impressum.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://skalar-advisory.de/impressum.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://skalar-advisory.de/en/impressum.html"/>
+  </url>
+  <url>
+    <loc>https://skalar-advisory.de/en/impressum.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://skalar-advisory.de/impressum.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://skalar-advisory.de/en/impressum.html"/>
+  </url>
+  <url>
+    <loc>https://skalar-advisory.de/datenschutz.html</loc>
+  </url>
+</urlset>
