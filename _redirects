@@ -7,6 +7,11 @@
 /lead-intake https://jarvis.skalar-advisory.com/lead-intake 200!
 /lead-intake/* https://jarvis.skalar-advisory.com/lead-intake/:splat 200!
 
+# --- Light-Variante ist seit 5.11.2026 die Hauptseite: alte Preview-Pfade auf / und /en/ ---
+# Die schwarze Fassung bleibt als Rueckfall unter /dark/ und /en/dark/ (noindex).
+/light/en/* /en/:splat 301!
+/light/* /:splat 301!
+
 # --- skalar-advisory.com -> englische Version auf .de (301, SEO-kanonisch) ---
 https://www.skalar-advisory.com/* https://skalar-advisory.de/en/:splat 301!
 https://skalar-advisory.com/en/* https://skalar-advisory.de/en/:splat 301!

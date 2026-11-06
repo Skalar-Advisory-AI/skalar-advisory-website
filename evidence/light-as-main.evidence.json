@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "pr": {
+    "repo": "Skalar-Advisory-AI/skalar-advisory-website",
+    "branch": "ada/light-as-main",
+    "titel": "Weisse Fassung wird Hauptseite: / und /en/ auf Light, schwarze Fassung als Rueckfall unter /dark/",
+    "target_base": "main",
+    "nummer": 21
+  },
+  "auftrag_von": "JARVIS (Marc-Entscheid 5.11.2026, corr 5b9888d70f86444994d68619ed0cf44a; t_5ca10d67 zusammengelegt)",
+  "zusammenfassung": "Light-Seiten aus PR #19 (0a6764e) werden / und /en/ (nur Head + Sprachumschalter angepasst: noindex raus, canonical, hreflang de/en/x-default). Alte schwarze Seiten 1:1 nach /dark/ und /en/dark/ (noindex, canonical auf Hauptseite, Sprachlinks innerhalb dark). _redirects: /light/* -> / und /light/en/* -> /en/ (301!). sitemap.xml + robots.txt neu, dark ausgeschlossen. Unterseiten unveraendert.",
+  "aenderungen": [
+    {"datei": "index.html", "scope": "ersetzt", "hinweis": "Inhalt = alte light/index.html, Head/Sprachlinks angepasst"},
+    {"datei": "en/index.html", "scope": "ersetzt", "hinweis": "Inhalt = alte light/en/index.html, Head/Sprachlinks angepasst"},
+    {"datei": "dark/index.html", "scope": "neu", "hinweis": "Inhalt = alte index.html, noindex + canonical + Sprachlinks /dark/"},
+    {"datei": "en/dark/index.html", "scope": "neu", "hinweis": "Inhalt = alte en/index.html, noindex + canonical + Sprachlinks /en/dark/"},
+    {"datei": "light/index.html, light/en/index.html", "scope": "entfernt", "hinweis": "ersetzt durch Redirect"},
+    {"datei": "_redirects", "scope": "geaendert", "hinweis": "2 Regeln /light/en/* und /light/* (301!)"},
+    {"datei": "sitemap.xml", "scope": "neu", "hinweis": "9 URLs mit hreflang-Alternates, ohne /dark/"},
+    {"datei": "robots.txt", "scope": "neu", "hinweis": "Disallow /dark/ und /en/dark/, Sitemap-Verweis"},
+    {"datei": "README.md", "scope": "geaendert", "hinweis": "Struktur-Abschnitt"},
+    {"datei": "evidence/light-main-*.png", "scope": "neu", "hinweis": "DE+EN 375/768/1440 Light, DE+EN 1440 Dark-Rueckfall"}
+  ],
+  "tests_ausgefuehrt": [
+    {"kommando": "git diff origin/main:light/index.html index.html (und EN, sowie origin/main:index.html dark/index.html und EN)", "ergebnis": "pass", "detail": "ausschliesslich Head-Zeilen (noindex, canonical, hreflang) + 1 Sprachumschalter-Zeile pro Datei"},
+    {"kommando": "python3 html.parser Stack-Check + Em-Dash + /light/-Restreferenzen + href-Zielpruefung (11 HTML-Dateien)", "ergebnis": "pass", "detail": "stack [] bad [] in 4 Seiten, U+2014 = 0, /light/-Refs = 0, 0 broken internal links"},
+    {"kommando": "curl lokal http.server 8765", "ergebnis": "pass", "detail": "/ /en/ /dark/ /en/dark/ /sitemap.xml /robots.txt /impressum.html /en/impressum.html -> 200; /light/ -> 404 (Dateien entfernt)"},
+    {"kommando": "curl live Baseline vor Merge", "ergebnis": "info", "detail": "/ 200 ohne style#light (0), /light/ 200 mit style#light (1), /dark/ 404, /sitemap.xml 404, /robots.txt 404"},
+    {"kommando": "CDP captureScreenshot DE+EN 375/768/1440 (+ Dark 1440)", "ergebnis": "pass", "detail": "body bg rgb(255,255,255) auf Light, rgb(16,17,20) auf Dark; 0 ausgeblendete .reveal; 375-DE per Vision geprueft: Einspaltig, keine Ueberlappung"},
+    {"kommando": "WCAG-Kontrast Light-Layer", "ergebnis": "pass", "detail": "Ink/Papier 18.88, Text2/Papier 7.41, Label/Papier 5.30, Gold-Ink/Papier 4.70, Ink/Karte 17.14, Text2/Karte 6.73, Label/Karte 4.81, Ink/Gold 7.78; alle >= 4.5"}
+  ],
+  "verifikation": [
+    {"art": "git_sha", "beleg": "ed11c094fc864cdf55092ade35123811015adda5", "kontext": "Feature-Commit auf ada/light-as-main, remote head via git ls-remote bestaetigt"},
+    {"art": "curl", "beleg": "POST /repos/Skalar-Advisory-AI/skalar-advisory-website/pulls -> 201, number 21, state open", "kontext": "https://github.com/Skalar-Advisory-AI/skalar-advisory-website/pull/21"}
+  ],
+  "nicht_verifiziert": [
+    "Netlify-Redirects /light/ -> / und /light/en/ -> /en/ (301): nur live pruefbar, nach Deploy durch Scotty",
+    "Netlify Deploy-Preview / Build-Status: von Adas Seite nicht sichtbar",
+    "Peer-Mesh Zwischenstand (--progress): peer_mesh.json auf dem Build-Host nicht vorhanden (config-invalid), kein Zwischenstand gesendet"
+  ],
+  "offen": [
+    "Unterseiten (Impressum DE/EN, Datenschutz, Kontakt-KI DE/EN, Termin DE/EN) bleiben schwarz; Light-Portierung = Folgeauftrag",
+    "Dark-Rueckfall traegt noch die alten Formulierungen (seit 2026/2016, mehr als verdoppelt), bewusst byte-identisch zur alten Seite",
+    "Offener PR ada/ki-headline-copy basiert auf den alten index-Dateien; nach Merge umziehen",
+    "sitemap.xml/robots.txt sind Ergaenzung ueber den Wortlaut hinaus; bei Bedarf aus dem PR nehmen"
+  ],
+  "timestamp": "2026-11-05T18:25:52Z",
+  "erstellt_von": "Ada"
+}
