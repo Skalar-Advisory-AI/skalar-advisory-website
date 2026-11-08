@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0",
+  "pr": {
+    "repo": "Skalar-Advisory-AI/skalar-advisory-website",
+    "branch": "ada/website-copy-kontrast",
+    "titel": "Copy: KI-Karte als betriebenes System, Kontrastformeln reduziert (DE + EN)",
+    "target_base": "main",
+    "nummer": null
+  },
+  "auftrag_von": "JARVIS (Marc-Go 06.11.2026, peer-mesh corr_id 3a6a90c41b5d44adb36c13fce320246c), Grundlage Pens 11 Kontrast-Funde",
+  "plan_ref": null,
+  "plan_approved_by": "Marc-Go via JARVIS (Copy-Aenderung, 2 Dateien, keine Struktur-/Layout-Aenderung, kleiner Fix ohne Plan-Gate)",
+  "zusammenfassung": "Hauptseite (index.html, en/index.html, Stand origin/main fccf91b nach PR #21): 7 Textstellen je Sprache ohne X-nicht-Y-Kontrastformel neu formuliert. KI-Karte: Ueberschrift 'KI als betriebenes System', Text benennt das Agentic-AI-Team (Orchestrator koordiniert spezialisierte KI-Agenten, reale Betriebsaufgaben). Einzige verbleibende Kontrastformel: 'Operator, nicht Theoretiker' (Ueber-Absatz, unveraendert). Keine neuen Kontrastformeln, kein Gedankenstrich. dark/-Rueckfallseiten unveraendert.",
+  "aenderungen": [
+    {"datei": "index.html", "scope": "geaendert", "hinweis": "7 Textstellen: Beirat-int, KI-Karte h3+p, ai-head, ai-lede, ncard 2 h4+p, ncard 3 p, ai-cta fine"},
+    {"datei": "en/index.html", "scope": "geaendert", "hinweis": "dieselben 7 Stellen, sinngemaess synchron"},
+    {"datei": "evidence/ada-website-copy-kontrast-de-375.png", "scope": "neu", "hinweis": "Screenshot DE 375px, Commit a8a3b42"},
+    {"datei": "evidence/ada-website-copy-kontrast-de-768.png", "scope": "neu", "hinweis": "Screenshot DE 768px"},
+    {"datei": "evidence/ada-website-copy-kontrast-de-1440.png", "scope": "neu", "hinweis": "Screenshot DE 1440px"},
+    {"datei": "evidence/ada-website-copy-kontrast-en-375.png", "scope": "neu", "hinweis": "Screenshot EN 375px"},
+    {"datei": "evidence/ada-website-copy-kontrast-en-768.png", "scope": "neu", "hinweis": "Screenshot EN 768px"},
+    {"datei": "evidence/ada-website-copy-kontrast-en-1440.png", "scope": "neu", "hinweis": "Screenshot EN 1440px"}
+  ],
+  "wortlaut_final": {
+    "de": {
+      "beirat_int": "Auch zu KI-Einführung und Agentic-AI, aus eigener Umsetzung.",
+      "ki_karte_h3": "KI als betriebenes System",
+      "ki_karte_p": "skalar AI ist ein Agentic-AI-Team: ein Orchestrator koordiniert spezialisierte KI-Agenten, die reale Betriebsaufgaben übernehmen. Skalar Advisory betreibt dieses Team selbst, im täglichen Einsatz.",
+      "ai_head": "Ein System im laufenden Betrieb.",
+      "ai_lede": "Der Beleg ist das System selbst. Marc Schmitz betreibt es am eigenen Setup und zeigt es vor.",
+      "ncard2_h4": "Umsetzung als Referenz",
+      "ncard2_p": "Sie sehen das laufende System, bevor Sie darüber entscheiden.",
+      "ncard3_p": "Kritische Aktionen laufen ausschließlich mit Ihrer Freigabe. Kosten gedeckelt, private und geschäftliche Daten getrennt.",
+      "cta_fine": "Ein Gespräch über Ihren Betrieb und was sich automatisieren lässt.",
+      "ueber_unveraendert": "Skalar Advisory ist die Beratung von Marc Schmitz, Operator, nicht Theoretiker. ..."
+    },
+    "en": {
+      "advisory_int": "Including AI adoption and agentic AI, from hands-on delivery.",
+      "ai_card_h3": "AI as an operated system",
+      "ai_card_p": "skalar AI is an agentic AI team: an orchestrator coordinates specialised AI agents that take on real operational tasks. Skalar Advisory runs this team itself, in daily use.",
+      "ai_head": "A system in live operation.",
+      "ai_lede": "The proof is the system itself. Marc Schmitz runs it on his own setup and shows it.",
+      "ncard2_h4": "Delivery as the reference",
+      "ncard2_p": "You see the running system before you decide on it.",
+      "ncard3_p": "Critical actions run only with your approval. Costs capped, private and business data kept separate.",
+      "cta_fine": "A conversation about your operations and what can be automated.",
+      "about_unchanged": "Skalar Advisory is the consultancy of Marc Schmitz, an operator, not a theorist. ..."
+    }
+  },
+  "tests_ausgefuehrt": [
+    {"test": "Em-Dash U+2014 in index.html und en/index.html", "ergebnis": "0 / 0"},
+    {"test": "<section> / </section> Balance", "ergebnis": "DE 5/5, EN 5/5"},
+    {"test": "Residual-Grep Kontrastmuster (nicht nur|statt |Kein |kein |sondern) DE, (not just|rather than|Not a|never run) EN", "ergebnis": "DE 0 Treffer; EN 1 Treffer = 'an operator, not a theorist' (gewollt)"},
+    {"test": "git diff --cached --stat", "ergebnis": "en/index.html 18 +/-9, index.html 18 +/-9, 2 Dateien, Commit a8a3b42"},
+    {"test": "Render lokal (python3 http.server 127.0.0.1:8765, CDP captureScreenshot mit Clip auf Dokumenthoehe), .reveal forciert sichtbar", "ergebnis": "DE 375/768/1440 h=5494/4435/4194, EN 375/768/1440 h=5389/4467/4198, faded-count je 0"},
+    {"test": "innerText per CDP nach Render", "ergebnis": "DE h3 'KI als betriebenes System', ai-head 'Ein System im laufenden Betrieb.', fine 'Ein Gespräch über Ihren Betrieb und was sich automatisieren lässt.'; EN h3 'AI as an operated system', ai-head 'A system in live operation.', fine 'A conversation about your operations and what can be automated.'"},
+    {"test": "vision_analyze DE 1440 (Leistungen-Reihe + skalar-AI-Sektion) und EN 375 (gesamt)", "ergebnis": "4 Leistungskarten gleichhoch, Gold-Headline 'KI als betriebenes System' zweizeilig umgebrochen, 3 ncards lesbar, ncard 2 kuerzer (eine Zeile Text), keine Ueberlappung, kein Abschnitt abgeschnitten"}
+  ],
+  "verifikation": [
+    {"schritt": "Basis = main nach PR #21", "beleg": "git fetch origin main -> fccf91b 'Weisse Fassung wird Hauptseite ... (#21)'; Branch ada/website-copy-kontrast von origin/main abgezweigt"},
+    {"schritt": "Nur Hauptseite betroffen", "beleg": "git diff --cached --stat listet exakt index.html + en/index.html; dark/index.html und dark/en/index.html unangetastet (Rollback-Kopie)"}
+  ],
+  "nicht_verifiziert": [
+    "Pens Entwurf (Session api-95167edef7ebe551) war aus Adas Profil NICHT lesbar (session_search: session_id not found, Profil pen nicht vorhanden). Die 11 Kontraststellen wurden eigenstaendig aus der Seite erhoben (DE: Zeilen 282, 287, 288a, 288b, 304, 306, 322, 323, 328, 335, 355 in origin/main). Zuordnung 'Doppelung 7' = ncard 2 'Umsetzung statt PowerPoint / kein Strategiepapier' (doppelt ai-head + KI-Karte) ist Adas Interpretation.",
+    "Peer-Mesh aus dem Ada-Container nicht erreichbar (/opt/data/ops_group/peer_mesh.json fehlt, reason_code config-invalid): weder --progress-Zwischenstand noch Pen-Feinschliff-Anfrage moeglich. Pen-Feinschliff daher offen, JARVIS kann ihn auf den Wortlaut unter wortlaut_final ansetzen.",
+    "Netlify Deploy-Preview fuer den PR-Head (kein Netlify-Status von Adas Seite pruefbar). Bindende visuelle Abnahme = Deploy-Preview bzw. Live nach Merge.",
+    "Echte :hover/:focus-Zustaende (headless)."
+  ],
+  "offen": [
+    "Freigabepunkt Marc: ncard 2 wurde umformuliert statt entfernt (3er-Raster bleibt). Alternative: Karte komplett streichen = 2 ncards, Layoutfrage an Pixel.",
+    "Freigabepunkt Marc: 'Die meisten reden über KI. Skalar Advisory betreibt sie.' wurde als impliziter Kontrast gestrichen; Ersatz ist der Schlusssatz 'Skalar Advisory betreibt dieses Team selbst, im täglichen Einsatz.'",
+    "Unveraendert gelassen (keine X-nicht-Y-Formel, Benefit-Aussagen): 'Skalieren ohne Kopfzahl', 'Wachstum ohne proportional wachsende Kosten', 'mit klarem Wert und ohne Beiwerk'. Falls Pen diese zu den 11 zaehlte, bitte nennen.",
+    "dark/-Rueckfallseiten tragen weiter die alten Formeln (bewusst, Rollback-Kopie, noindex)."
+  ],
+  "timestamp": "2026-11-06T09:54:39Z",
+  "erstellt_von": "Ada",
+  "nachtraege": []
+}
