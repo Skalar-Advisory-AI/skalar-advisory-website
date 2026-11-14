@@ -40,10 +40,8 @@
   .lcard p { font-size:13px; line-height:1.6; color:var(--grey); }
   .lcard .int { margin-top:14px; padding-top:14px; border-top:1px solid var(--line); font-size:12px; line-height:1.55; color:var(--faint); }
   .lcard .int::before { content:"AI Integration"; display:block; font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold); margin-bottom:6px; }
-  .lcard .tag { margin-top:auto; padding-top:18px; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--faint); }
   .lcard.ai { border-color:rgba(198,161,91,.34); }
   .lcard.ai h3 .k { color:var(--gold); }
-  .lcard.ai .tag { color:var(--gold); }
   .stats { display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; text-align:center; }
   .stat b { display:block; color:var(--gold); font-size:clamp(30px, 4vw, 44px); font-weight:bold; }
   .stat span { font-size:13px; color:var(--faint); }
@@ -63,33 +61,9 @@
   footer a { color:var(--faint); text-decoration:none; transition:color 120ms ease-out; }
   footer a:hover { color:var(--gold); }
 
-  /* ===== skalar AI as project highlight ===== */
-  .ai-sec { background:linear-gradient(180deg, #0E0F12, #121317); }
-  .ai-top { display:flex; align-items:flex-end; justify-content:space-between; gap:30px; flex-wrap:wrap; }
-  .subbrand { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--faint); margin-bottom:8px; }
-  .brandrow { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
-  .brandrow .stair { width:26px; height:21px; flex:none; }
-  .brandrow .wm { font-size:15px; font-weight:bold; letter-spacing:3px; color:var(--gold); }
-  .brandrow .wm span { color:var(--faint); }
-  .ai-head { color:#fff; font-size:clamp(24px, 3.4vw, 30px); font-weight:bold; letter-spacing:.3px; line-height:1.2; }
-  .ai-lede { font-size:15px; line-height:1.6; color:var(--grey); max-width:440px; }
-  .shot-embed { margin:40px 0 8px; border:1px solid var(--line); border-radius:14px; overflow:hidden; box-shadow:0 30px 80px rgba(0,0,0,.5); }
-  .shot-embed img { display:block; width:100%; height:auto; }
-  .caption { font-size:11px; letter-spacing:1px; color:var(--faint); text-align:center; margin-top:14px; }
-  .ngrid { display:grid; grid-template-columns:repeat(3, 1fr); gap:18px; margin-top:46px; }
-  .ncard { background:var(--panel); border:1px solid var(--line); padding:28px 24px; }
-  .ncard .ic { width:30px; height:30px; margin-bottom:18px; flex:none; }
-  .ncard h4 { color:#EDEDEA; font-size:16px; font-weight:bold; margin-bottom:10px; letter-spacing:.3px; }
-  .ncard p { font-size:12.5px; line-height:1.6; color:var(--grey); }
-  .ai-cta { margin-top:52px; text-align:center; }
-  .ai-cta .line { font-size:19px; color:#EDEDEA; font-weight:normal; margin-bottom:22px; letter-spacing:.2px; }
-  .ai-cta .btn { display:inline-block; font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold); border:1px solid var(--gold); border-radius:4px; padding:15px 34px; text-decoration:none; transition:background 160ms ease-out, color 160ms ease-out; }
-  .ai-cta .btn:hover { background:var(--gold); color:var(--black); }
-  .ai-cta .fine { margin-top:16px; font-size:11px; color:var(--faint); letter-spacing:.5px; }
 
   @media (max-width: 900px) {
     .lgrid { grid-template-columns:repeat(2, 1fr); }
-    .ngrid { grid-template-columns:1fr; }
   }
   @media (max-width: 640px) {
     header { padding:16px 0; }
@@ -109,9 +83,8 @@
   }
 
   /* ===== Design-Polish: Hover-States ===== */
-  .lcard, .ncard { transition:border-color 180ms ease-out, background 180ms ease-out; }
+  .lcard { transition:border-color 180ms ease-out, background 180ms ease-out; }
   .lcard:hover { border-color:rgba(198,161,91,.45); background:#1C1D22; }
-  .ncard:hover { border-color:rgba(198,161,91,.30); }
   header .brand { text-decoration:none; cursor:default; }
   header .brand svg { transition:opacity 160ms ease-out; }
   header .brand:hover svg { opacity:0.75; }
@@ -178,32 +151,12 @@ h2 { color:var(--gold-ink); }
 .lcard p, .card p { color:var(--text2); }
 .lcard .int { border-top-color:var(--line-l); color:var(--label); }
 .lcard .int::before { color:var(--gold-ink); }
-.lcard .tag { color:var(--label); }
 .lcard.ai { border-color:rgba(198,161,91,.70); }
-.lcard.ai h3 .k, .lcard.ai .tag { color:var(--gold-ink); }
+.lcard.ai h3 .k { color:var(--gold-ink); }
 .lcard:hover { background:var(--paper); border-color:var(--gold); box-shadow:inset 0 2px 0 0 var(--gold), 0 10px 28px rgba(16,17,20,.07); }
 .ic { stroke:var(--gold-ink); }
 .ic circle[fill] { fill:var(--gold-ink); }
 
-/* skalar AI, Variante A (alles hell): Sektion auf Karte-Grau, Kacheln weiss */
-body:not(.band) .ai-sec { background:var(--card); }
-body:not(.band) .subbrand { color:var(--label); }
-/* skalar-AI-Zeile analog Logo 2: Signet Antikgold, Wortmarke Tiefschwarz (AA: Gold-Text auf #F4F4F2 nur 4,3:1) */
-body:not(.band) .brandrow .wm { color:var(--ink); }
-body:not(.band) .brandrow .wm span { color:var(--label); }
-body:not(.band) .brandrow .stair g { fill:var(--gold); }
-body:not(.band) .ai-head { color:var(--ink); }
-body:not(.band) .ai-lede { color:var(--text2); }
-body:not(.band) .shot-embed { border-color:var(--line-l); box-shadow:0 24px 60px rgba(16,17,20,.16); }
-body:not(.band) .caption { color:var(--label); }
-body:not(.band) .ncard { background:var(--paper); border-color:var(--line-l); }
-body:not(.band) .ncard:hover { border-color:var(--gold); }
-body:not(.band) .ncard h4 { color:var(--ink); }
-body:not(.band) .ncard p { color:var(--text2); }
-body:not(.band) .ai-cta .line { color:var(--ink); }
-body:not(.band) .ai-cta .btn { color:var(--gold-ink); border-color:var(--gold-ink); background:var(--paper); }
-body:not(.band) .ai-cta .btn:hover { background:var(--gold); border-color:var(--gold); color:var(--ink); }
-body:not(.band) .ai-cta .fine { color:var(--label); }
 
 /* Track Record */
 .stat b { color:var(--gold-ink); }
@@ -247,7 +200,7 @@ header .brand svg path { stroke:var(--gold); }
 <div class="wrap hero">
   <h1><em>Building</em>, <em>transforming</em> and <em>scaling</em> digital media businesses, nationally and internationally.</h1>
   <p class="fields">Digital Publishing&nbsp;·&nbsp;Media &amp; Marketing&nbsp;·&nbsp;AI</p>
-  <a class="cta" href="/en/kontakt-ki.html">Request a conversation</a>
+  <a class="cta" href="/en/termin.html">Request a conversation</a>
 </div>
 
 <section id="services">
@@ -258,7 +211,7 @@ header .brand svg path { stroke:var(--gold); }
         <svg class="ic" viewBox="0 0 34 30" fill="none" stroke="#C6A15B" stroke-width="1.6" aria-hidden="true"><path d="M4 26 L14 14 L20 20 L30 6"/><path d="M23 6 H30 V13"/></svg>
         <h3>Strategy &amp; Transformation</h3>
         <p>Digital and revenue strategy (paid, advertising, commerce), AI transformation across newsroom, marketing and publishing, international expansion, due diligence for investors.</p>
-        <p class="int">From digital and revenue strategy to an operated agentic AI system (skalar AI), from the idea to running operations.</p>
+        <p class="int">From digital and revenue strategy to an operated agentic AI system, from the idea to running operations.</p>
       </div>
       <div class="lcard reveal">
         <svg class="ic" viewBox="0 0 34 30" fill="none" stroke="#C6A15B" stroke-width="1.6" aria-hidden="true"><circle cx="17" cy="9" r="5"/><path d="M6 26 c0-7 5-11 11-11 s11 4 11 11"/></svg>
@@ -275,57 +228,12 @@ header .brand svg path { stroke:var(--gold); }
       <div class="lcard ai reveal">
         <svg class="ic" viewBox="0 0 34 30" fill="none" stroke="#C6A15B" stroke-width="1.6" aria-hidden="true"><rect x="4" y="20" width="6" height="7"/><rect x="14" y="13" width="6" height="14"/><rect x="24" y="5" width="6" height="22"/><circle cx="7" cy="15" r="1.6" fill="#C6A15B" stroke="none"/><circle cx="17" cy="8" r="1.6" fill="#C6A15B" stroke="none"/><circle cx="27" cy="3" r="1.2" fill="#C6A15B" stroke="none"/></svg>
         <h3>AI as an <span class="k">operated system</span></h3>
-        <p>skalar AI is an agentic AI team: an orchestrator coordinates specialised AI agents that take on real operational tasks. Skalar Advisory runs this team itself, in daily use.</p>
-        <div class="tag">Operated as skalar AI</div>
+        <p>An agentic AI team run in-house: an orchestrator coordinates specialised AI agents that take on real operational tasks. Skalar Advisory runs this team itself, in daily use.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="skalar-ai" class="ai-sec">
-  <div class="wrap">
-    <div class="ai-top">
-      <div>
-        <div class="subbrand">A project from Skalar Advisory</div>
-        <div class="brandrow">
-          <svg class="stair" viewBox="0 0 26 21" aria-hidden="true"><g fill="#C6A15B"><rect x="0" y="15" width="7" height="6"/><rect x="9" y="8" width="7" height="13"/><rect x="18" y="1" width="7" height="20"/></g></svg>
-          <div class="wm">SKALAR <span>AI</span></div>
-        </div>
-        <div class="ai-head">A system in live operation.</div>
-      </div>
-      <p class="ai-lede">The proof is the system itself. Marc Schmitz runs it on his own setup and shows it.</p>
-    </div>
-
-    <div class="shot-embed">
-      <img src="/assets/skalar-ai-dashboard.png" alt="Anonymised skalar AI dashboard" width="2560" height="1352">
-    </div>
-    <div class="caption">Live view of the operated system &middot; anonymised, with no real names, data or figures</div>
-
-    <div class="ngrid">
-      <div class="ncard reveal">
-        <svg class="ic" viewBox="0 0 30 30" fill="none" stroke="#C6A15B" stroke-width="1.6" aria-hidden="true"><rect x="3" y="18" width="5" height="9"/><rect x="12" y="11" width="5" height="16"/><rect x="21" y="4" width="5" height="23"/></svg>
-        <h4>Scale without headcount</h4>
-        <p>One person plus an agent team delivers what would otherwise take a department. Growth without costs that grow in proportion.</p>
-      </div>
-      <div class="ncard reveal">
-        <svg class="ic" viewBox="0 0 30 30" fill="none" stroke="#C6A15B" stroke-width="1.6" aria-hidden="true"><path d="M6 15 l6 6 l12 -13"/></svg>
-        <h4>Delivery as the reference</h4>
-        <p>You see the running system before you decide on it.</p>
-      </div>
-      <div class="ncard reveal">
-        <svg class="ic" viewBox="0 0 30 30" fill="none" stroke="#C6A15B" stroke-width="1.6" aria-hidden="true"><path d="M15 3 L25 8 V15 c0 6-5 9-10 12 c-5-3-10-6-10-12 V8 Z"/></svg>
-        <h4>Controlled and secure</h4>
-        <p>Critical actions run only with your approval. Costs capped, private and business data kept separate.</p>
-      </div>
-    </div>
-
-    <div class="ai-cta">
-      <div class="line">Interested in skalar AI? Let us talk.</div>
-      <a class="btn" href="/en/kontakt-ki.html">Request a conversation</a>
-      <div class="fine">A conversation about your operations and what can be automated.</div>
-    </div>
-  </div>
-</section>
 
 <section id="trackrecord">
   <div class="wrap">
