@@ -13,16 +13,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://skalar-advisory.de/"/>
   </url>
   <url>
-    <loc>https://skalar-advisory.de/kontakt-ki.html</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://skalar-advisory.de/kontakt-ki.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://skalar-advisory.de/en/kontakt-ki.html"/>
-  </url>
-  <url>
-    <loc>https://skalar-advisory.de/en/kontakt-ki.html</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://skalar-advisory.de/kontakt-ki.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://skalar-advisory.de/en/kontakt-ki.html"/>
-  </url>
-  <url>
     <loc>https://skalar-advisory.de/termin.html</loc>
     <xhtml:link rel="alternate" hreflang="de" href="https://skalar-advisory.de/termin.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://skalar-advisory.de/en/termin.html"/>
